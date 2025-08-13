@@ -1,6 +1,6 @@
-PWD d:\UBC courses\WLIURA 2025\ratio1_and_ratio2
+PWD d:\UBC courses\WLIURA 2025\p-adic_Ratios_Counting\ratio1_and_ratio2
 INPUT C:\Users\Richard Adhika\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT d:\UBC courses\WLIURA 2025\ratio1_and_ratio2\ratio1_and_ratio2.tex
+INPUT d:\UBC courses\WLIURA 2025\p-adic_Ratios_Counting\ratio1_and_ratio2\ratio1_and_ratio2.tex
 OUTPUT ratio1_and_ratio2.log
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
@@ -217,6 +217,7 @@ INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amscls\ams
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\tools\enumerate.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\tools\enumerate.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\tools\enumerate.sty
@@ -254,7 +255,6 @@ INPUT .\ratio1_and_ratio2.aux
 INPUT ratio1_and_ratio2.aux
 INPUT ratio1_and_ratio2.aux
 OUTPUT ratio1_and_ratio2.aux
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
@@ -282,14 +282,14 @@ INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\u
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt12.tfm
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmcsc10.tfm
 OUTPUT ratio1_and_ratio2.pdf
 INPUT C:\Users\Richard Adhika\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmcsc10.tfm
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti8.tfm
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
 INPUT ratio1_and_ratio2.aux
 INPUT C:\Users\Richard Adhika\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\Richard Adhika\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk

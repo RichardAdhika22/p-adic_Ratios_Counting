@@ -8,12 +8,20 @@
 %% AMS mathematics packages - they contain many useful fonts and symbols.
 \usepackage{amsmath, amsfonts, amssymb}
 
+
 %% The geometry package changes the margins to use more of the page, I suggest
 %% using it because standard latex margins are chosen for articles and letters,
 %% not homework.
 \usepackage[paper=letterpaper,left=25mm,right=25mm,top=3cm,bottom=25mm]{geometry}
 %% For details of how this package work, google the ``latex geometry documentation''.
 \usepackage{amsthm}
+\usepackage{geometry}
+\geometry{
+  left=0.7in,
+  right=0.7in,
+  top=0.8in,
+  bottom=1in
+}
 
 \newtheorem{lemma}{Lemma}
 \usepackage{enumerate}
@@ -25,7 +33,9 @@
 %% This is a little more complicated because we have used `` \\ '' to force a line-break between the name and number.
 %%
 \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
 \newcommand{\bigO}{\mathcal{O}}
+\newcommand{\GL}{\mathbf {GL}}
 
 \cfoot{Page \thepage} % page in middle
 
@@ -33,16 +43,10 @@
 \renewcommand{\footrulewidth}{0.4pt}
 %%%
 
-%%%%%%
-%% We shouldnt have to change the stuff above, but if you want to add some newcommands and things like that, then putting them between here and the ``\begin{document}'' is a good idea.
-%%%%%%
-
-
 \begin{document}
-% Homework 0 does not contain any mathematics --- it is just for you to practice using latex. All I want you to do is to try to reproduce this document as well as you can. You do not have to hand it in. I don't mind if you work in small groups, but just copying it directly from a friend isn't going to help you later in the term.
 
 \begin{center}
-    {\LARGE \textbf{Ratio 1 and Ratio 2}} \\
+    {\bf \LARGE Ratio 1 and Ratio 2} \\
     Richard Adhika
 \end{center}
 
@@ -52,13 +56,41 @@
 
 \
 
-The first question is that
-given a prime $p$ and a positive integer $n$, 
-we want to calculate the ratio 
+For reasons coming from number theory, we are interested in computing the following two kinds of (closely related) ratios, for different primes $p$: 
+Let $t$ and $d$ be integers.  
+
+The first ratio is 
 \[
-\nu_{p,n}(t, D) = \frac{\#\{M \in \text{GL}_2(\Z/p^n)| M \text{ has trace } t \text{ and determinant } D \bmod p^n\}}
+\nu_{p, n} (t, d) = \frac{\#\{M\in \GL_2(\Z/p^n\Z) \vert M \text{ has trace } t \text{ and }  \det  D  \mod p^n\} }{p^{2n-2}(p^2-1)}.
+\]
+
+This ratio is really interesting only when the \emph{discriminant} of the characteristic polynomial, i.e., 
+$t^2-4D$, is divisible by $p$ (and they get more interesting as the power of $p$ dividing the discriminant gets larger). 
+These stabilize when $n$ gets large (if $p$ doesn't divide the discriminant, they stabilize right away). 
+However,  we understand these quite well. We are more interested in the ones that come no from counting solutions $\mod p^n$, but from counting the \emph{reductions  $\mod p^n$ of solutions in $\Z_p$}. 
+More precisely, we define 
+\[
+\mu_{p, n} (t, d) = \frac{\#\{M\in \GL_2(\Z/p^n\Z) \vert \exists M'\in \GL_2(\Z_p):  M' \text{ has trace } t \text{ and }  \det  D, \text { and } M' \bmod p^n = M \} } 
 {p^{2n-2}(p^2-1)}.
 \]
+
+Since we cannot really handle full $p$-adic series in a computer code, we introduce another parameter, "kbig" or something (also user-defined), and compute 
+\[
+\mu_{p, n} (t, d) = \frac{\#\{M\in \GL_2(\Z/p^n\Z) \vert \exists M'\in \GL_2(\Z/p^{kbig}\Z):  M' \text{ has trace } t \text{ and }  \det  D, \text { and } M' \bmod p^n = M \} } 
+{p^{2n-2}(p^2-1)}.
+\]
+
+Again these stabilize eventually (as $n$ gets large, but we need $kbig>>n$), and again they are only interesting when a power of $p$ divides the discriminant (when it doesn't, these also stabilize at $n=1$ and are equal to $\nu_p$). 
+We want to know these numbers for various values of $t$, $d$, and $p$.
+The problem is that even if you let $p=5$ and $kbig=6$, it is already taking forever to compute 
+(using brute force method). 
+
+\vspace{0.6in}
+
+{\bf \LARGE 2. Ratio 1}
+
+\
+
 We first want to try to generate all matrices of the form 
 \[
 \begin{pmatrix}
@@ -66,12 +98,13 @@ a & b \\ c & d
 \end{pmatrix}
 \]
 with $d \equiv t - a \bmod p^n$ and $ad - bc \equiv D \bmod p^n$ 
-for $a,b,c,d \in \Z/p^n$.
+for $a,b,c,d \in \Z/p^n\Z$.
 Here, we have 3 free parameters $a,b$, and $c$ since $d$ depends solely on $a$ for the given $t$.
 The naive brute force method is to loop
-through $[0, p^n-1]$ for each $a,b,c$ and then check the correponding determinant constraint.
+through $[0, p^n-1]$ for each $a,b,c$ and then check the determinant condition.
 This takes $\bigO(p^{3n})$, which is very slow.
-Hence, the function \texttt{build\_matrices2} aims to 
+Hence, the function \texttt{build\_matrices1} in the file 
+\emph{ratio1\_and\_ratio2.ipynb} aims to 
 generate the matrices more efficiently 
 (the pseudocode of the function is provided on the next page).
 
@@ -83,111 +116,74 @@ Let rhs$ = ad-D \bmod p^n$.
 Then, for any $b \in [0, p^n-1]$,
 the problem turns into solving the equation (for $c$)
 \begin{equation}
-bc \equiv \text{rhs} \bmod p^n .
+bc \equiv rhs \bmod p^n .
 \end{equation}
 If $p \nmid b$, then $b^{-1}$ exists and thus 
 we have a unique solution
-$c \equiv \text{rhs} \cdot b^{-1} \bmod p^n$ (line 10-12).
+$c \equiv rhs \cdot b^{-1} \bmod p^n$ (line 6).
 We don't need to loop through $c$ for these $b$.
-If $p \mid b$, then we have three cases 
-(the first two cases are essentially contained within line 14-28 of the code below):
+If $p \mid b$, then we have three cases as follows,
+
 \begin{enumerate}
-\item $p \nmid \text{rhs}$. This immediately tell us that (1) can't have any solution 
-if $p \mid b$. This is indicated by the variable $pval$ (line 16), which will be 0
-so that the loop won't execute.
-\item $v_p(\text{rhs}) = pval$ for $pval \geq 1$.
-If $v_p(b) > pval$, then (1) also can't have any solution.
-Hence, it suffices to check $b$ with $1 \leq v_p(b) \leq pval$ (line 17 with $i = v_p(b)$).
-Also $pval < n$ so the modulo is well-defined.
-Then, for each $i$, let $b = p^i \cdot \text{ind}$ so that we can rewrite (1) as 
-\[
-p^i \cdot \text{ind} \cdot c \equiv \text{rhs} \bmod p^n
-\]
-Dividing both sides by $p^i$, we have
-\[
-\text{ind} \cdot c \equiv (\text{rhs} / p^i) \bmod p^{n-i}.
-\]
-We can safely assume that $p \nmid \text{ind}$ (line 21) since otherwise it would either be 
-considered by larger $i$ in future loops or have no solution.
-Hence, 
-$c \equiv (\text{rhs} / p^i) \cdot \text{ind}^{-1} \bmod p^{n-i}$ (line 22).
-Then, we lift the solution to modulo $p^n$ by line 23-25.
+\item $p \nmid rhs$. This immediately tell us that (1) can't have any solution 
+if $p \mid b$. This corresponds to the facet that the loop in line 9 won't execute.
 
-\
+\item $v_p(rhs) \geq 1$.
+If $v_p(b) > v_p(rhs)$, then (1) also can't have any solution.
+Hence, it suffices to check $b$ with $1 \leq v_p(b) \leq v_p(rhs)$ (line 10 with $v_p(b) = i$).
+Also $v_p(rhs) < n$ so the modulo is well-defined.
+Then, for each $i$, let $b = p^i j$ so that we can rewrite (1) as 
+\[
+p^i j \cdot c \equiv rhs \bmod p^n,
+\]
+We then get $c \equiv (rhs / p^i) \cdot j^{-1} \bmod p^{n-i}$, 
+for which we lift $c$ to modulo $p^n$.
 
-\begin{algorithm}
-\caption{build\_matrices2}
+\item $rhs \equiv 0 \bmod p^n$.
+Then, we can set $b=0$ so that all $c \in [0, p^n-1]$ satisfy (1) (line 14-16).
+Furthermore, for any $b$, 
+all $c$ with $v_p(c) = n-v_p(b)$ satisfy (1) (line 17 - 19). 
+\end{enumerate}
+
+\begin{algorithm}[H]
+\caption{build\_matrices1}
 \begin{algorithmic}[1]
-\Function{build\_matrices2}{$n, p$, target\_t, target\_det}
-    \State result $\gets$ [ ]
-    \State $R \gets \text{Integers}(p^n)$
-    \State trace $\gets R(\text{target\_t})$
-    \State $D \gets R(\text{target\_det})$ \\
-    
-    \ForAll{$a \in R$}
-        \State $d \gets \text{trace} - a$
-        \State rhs $\gets a \cdot d - D$
+\Function{build\_matrices1}{$n, p, t, D$}
+    \State $res \gets$ [ ], $Rn \gets \Z/p^n\Z$    
+    \ForAll{$a \in Rn$}
+        \State $rhs \gets Rn(D - a(t-a))$
+        \State Add all tuples $(a,b,c,d)$ to $res$ such that $c \equiv rhs \cdot b^{-1} \bmod p^n$ with $p \nmid b$. \\
         
-        \ForAll{$b \in R$ with $p \nmid b$}
-            \State result.append$(a, b, \text{rhs}/b, d)$
-        \EndFor \\
-
         \If{rhs $\neq 0$}
-            \State rhs $\gets \text{Integer}(\text{rhs})$
-            \State $pval \gets \text{rhs.valuation}(p)$
-
-            \For{$i = 1$ to $pval$}
-                \State rhs\_new $\gets R(\text{rhs} / p^i)$
-                \For{$\text{ind} = 1$ to $p^{n-i} - 1$}
-                    \State $b \gets R(p^i \cdot \text{ind})$
-                    \If{not $p$ divides ind}
-                        \State $c\_start \gets \text{rhs\_new} / \text{ind}$
-                        \For{$c = c\_start$ to $p^n$ with step size $p^{n-i}$}
-                            \State result.append$(a, b, c, d)$
-                        \EndFor
-                    \EndIf
+            \For{$i = 1$ to $v_p(rhs)$}
+                \For{$b \in Rn$ with $b = p^ij$ with $p \nmid j$}
+                    \State Add $(a,b,c,d)$ to $res$ with $c \in Rn$ satisfying $c \equiv rhs \cdot j^{-1} \bmod p^{n-i}$
                 \EndFor
-            \EndFor \\
-
+            \EndFor
         \Else
             \ForAll{$c \in R$}
-                \State result.append$(a, 0, c, d)$
+                \State Add $(a,0,c,d)$ to $res$
             \EndFor
 
-            \For{$b = p$ to $p^n - 1$ step $p$}
-                \State $b \gets R(b)$
-                \State $pval \gets b.\text{valuation}(p)$
-                \For{$c = 0$ to $p^n - 1$ step $p^{n - pval}$}
-                    \State result.append$(a, b, c, d)$
-                \EndFor
+            \For{$b \in Rn$ with $v_p(b) = i \geq 1$}
+                \State Add $(a,b,c,d)$ to $res$ with $c \in Rn$ satisfying $v_p(c) = n-i$
             \EndFor
         \EndIf
     \EndFor
-    \State \Return result
+    \State \Return $res$
 \EndFunction
 \end{algorithmic}
 \end{algorithm}
 
-\item $\text{rhs} \equiv 0 \bmod p^n$.
-Then, we can set $b=0$ so that all $c \in [0, p^n-1]$ satisfy (1) (line 31-33).
-Furthermore, for all $b$ with $v_p(b) = pval$, 
-all $c$ with $v_p(c) = n-pval$ satisfy (1) (line 34 - 40). 
-
-\end{enumerate}
-
-\
-
-Notice that in the second case, we have that the number of solutions 
-with $b = b'$ satisfying $v_p(b') = v$ is the same as that of $b = p^v$
-as the loops in line 23-25 has the same step size, only with different $c_start$.
 Assuming $n$ is not large, this algorithm costs $\bigO(p^{2n})$,
-which is already quite an improvement from the brute force function.
-This is the most optimal function that I can think of so far if we want to genuinely
-generate every single matrix satifying the numerator condition.
+Notice that in the second case, we have that the number of matrices 
+with $b = b'$ satisfying $v_p(b') = v$ is the same as that of $b = p^v$
+as the loops in line 9-11 has the same step size.
+which is already quite an improvement from the brute force algorithm.
 
 \
 
-Now, we can modify this function a bit if we only want to \textit{count} the number of matrices
+Now, we can modify this algorithm a bit if we only want to \emph{count} the number of matrices
 satisfying the numerator condition.
 The few points that we obtained so far are:
 \begin{itemize}
@@ -210,29 +206,21 @@ p^n + \sum_{i=1}^{n-1} p^i (p^{n-i} - p^{n-i-1})
 many solutions corresponds to $b$ with $b = 0$ and $v_p(b) \geq 1$.
 \end{itemize}
 
-With these in mind, we then write a function \texttt{count\_matrices1}
-that count the number of matrices satisfying the numerator condition in $\bigO(p^n)$,
-and thus the first ratio.
+With these in mind, we then write a function \texttt{ratio1}
+that count the number of matrices satisfying the numerator condition in $\bigO(p^n)$,.
 The code is as follows,
 \begin{algorithm}[H]
-\caption{count\_matrices1}
+\caption{ratio1}
 \begin{algorithmic}[1]
-\Function{count\_matrices}{$n$, $target\_trace$, $target\_det$}
-    \State $count \gets p^n \cdot p^{n-1} \cdot (p - 1)$
-    \State $R \gets \text{Integers}(p^n)$
-    \State $trace \gets R(target\_trace)$
-    \State $D \gets R(target\_det)$
-
+\Function{ratio1}{$n, t, D$}
+    \State $count \gets p^n \cdot p^{n-1} \cdot (p - 1)$, $Rn \gets \text{Integers}(p^n)$
     \ForAll{$a \in R$}
-        \State $d \gets trace - a$
-        \State $rhs \gets a \cdot d - D$
+        \State $rhs \gets Rn(a(t-a) - D)$
 
         \If{$rhs \neq 0$}
-            \State $pval \gets \text{rhs.valuation}(p)$
-            \State $count \gets count + pval \cdot p^{n-1} \cdot (p - 1)$
+            \State $count \gets count + v_p(b) \cdot p^{n-1} \cdot (p - 1)$
         \Else
-            \State $count \gets count + p^n$
-            \State $count \gets count + (n - 1) \cdot (p^n - p^{n-1})$
+            \State $count \gets count + p^n + (n - 1) \cdot (p^n - p^{n-1})$
         \EndIf
     \EndFor
     \State \Return $count$
@@ -240,20 +228,18 @@ The code is as follows,
 \end{algorithmic}
 \end{algorithm}
 
+\newpage
+
+{\bf \LARGE 3. Ratio 2}
+
 \
 
-Moving on, we also want to compute the second ratio as follows
-\[
-\mu_{p,n}(t, D) = \frac{\#\{M \in \text{GL}_2(\Z/p^n)| 
-\exists M' \in \text{GL}_2(\Z/p^{kmax}): M' \text{ has trace } t \text{ and det } D, M' \bmod p^n = M\}}
-{p^{2n-2}(p^2-1)}.
-\]
 For the second ratio, however, we still need to generate the matrices 
-as the reduction from $kmax$ to $n$ may not include every matrix that satisfies the constraint 
-in $\Z / p^n$ (which is true if $p^l | t^2-4D$ for some $l \in \mathbb{N}$).
+as the reduction from $kbig$ to $n$ may not include every matrix that satisfies the constraint 
+in $\Z / p^n\Z$ (which is true if $p^l | t^2-4D$ for some $l \in \mathbb{N}$).
 The problem now is that generating and storing all such matrices takes 
-up a lot of time and space (e.g. for $p=5$ and $kmax=5$, we have around 11 million matrices
-and for $kmax=6$, CoCalc runs out of space).
+up a lot of time and space (e.g. for $p=5$ and $kbig=5$, we have around 11 million matrices
+and for $kbig=6$, CoCalc runs out of space).
 
 \
 
@@ -261,44 +247,45 @@ What if we don't actually need to generate all the matrices?
 The first observation is that 
 \begin{lemma}
 For any matrix $M = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$
-with entries in $\Z/p^{kmax}$ and that
-$p \nmid b$, we only need to consider $a, b \in [0, p^n-1]$.
+with entries in $\Z/p^{kbig}\Z$,
+if $p \nmid b$, we only need to consider $a, b \in [0, p^n-1]$.
 \end{lemma}
 \begin{proof}
-Consider two matrices $\begin{pmatrix} a_1 & a_2 \\ a_3 & a_4 \end{pmatrix}$ and
-$\begin{pmatrix} b_1 & b_2 \\ b_3 & b_4 \end{pmatrix}$
-with $p \nmid a_2, b_2$.
-Then, the modular equation $a_2a_3 \equiv \text{rhs} \bmod p^{kmax}$ has a unique solution 
-$a_3 \equiv \text{rhs} \cdot a_2^{-1} \bmod p^{kmax}$.
-Furthermore, the modular equation $b_2b_3 \equiv \text{rhs} \bmod p^{kmax}$
-also has a unique solution $b_3 \equiv \text{rhs} \cdot b_2^{-1} \bmod p^{kmax}$.
-Assume that $b_2 \equiv a_2 \bmod p^n$ and $b_1 \equiv a_1 \bmod p^n$.
+Consider two matrices $\begin{pmatrix} a_1 & b_1 \\ c_1 & d_1 \end{pmatrix}$ and
+$\begin{pmatrix} a_2 & b_2 \\ c_2 & d_2 \end{pmatrix}$
+with $p \nmid b_1, b_2$.
+Let $rhs = a_1d_1-D \bmod p^{kbig}$.
+Then, the modular equation $b_1c_1 \equiv rhs \bmod p^{kbig}$ has a unique solution 
+$c_1 \equiv rhs \cdot b_1^{-1} \bmod p^{kbig}$ .
+Furthermore, the modular equation $b_2b_3 \equiv rhs \bmod p^{kbig}$
+also has a unique solution $b_3 \equiv rhs \cdot b_2^{-1} \bmod p^{kbig}$.
+Assume that $b_2 \equiv b_1 \bmod p^n$ and $a_2 \equiv a_1 \bmod p^n$.
 We therefore have
 \[
-b_4 \equiv t-b_1 \equiv t-a_1 \equiv a_4 \bmod p^n
+d_2 \equiv t-a_2 \equiv t-a_1 \equiv d_1 \bmod p^n
 \] 
 and
 \[
-b_3 \equiv (b_1b_4 - D)b_2^{-1} 
-\equiv (a_1a_4 - D)a_2^{-1} 
-\equiv a_3 \bmod p^n.
+c_2 \equiv (a_2d_2 - D)b_2^{-1} 
+\equiv (a_1d_1 - D)b_1^{-1} 
+\equiv c_1 \bmod p^n.
 \]
 Hence all $a,b \geq p^n$ with $p \nmid b$ will not 
 produce any new reduced matrix.
 \end{proof}
 
-This means that the reduction does not affect the uniqueness of solution 
+This means that the reduction does not affect the existence and uniqueness of matrices 
 for $b$ with $p \nmid b$.
 Therefore, just as the first ratio, we don't need to consider these $b$'s
 and that the count for these matrices is $p^{2n-1}(p-1)$.
-Moving on to the next observation, we have
+Next, we have
 
 \
 
 \begin{lemma}
-Let $A$ be the set of all $M \in \text{GL}_2(\Z/p^n)$ 
-such that there exists $M' \in \text{GL}_2(\Z/p^{kmax})$ having 
-trace $t$ and determinant $D$, and that $M = M' \bmod p^n$
+Let $A$ be the set of all $M \in \GL_2(\Z/p^n\Z)$ 
+such that there exists $M' \in \GL_2(\Z/p^{kbig}\Z)$ having 
+trace $t$ and determinant $D$, and that $M \equiv M' \bmod p^n$
 (the numerator condition).
 Let $S \subset A$ with $b = p^v$ and
 $S' \subset A$ with $b = p^vu$ for some fixed $u$ with $p \nmid u$
@@ -319,7 +306,7 @@ a & p^vu \\ cu^{-1} & d
 \]
 First, we want to show that this mapping is well-defined 
 by showing that $N \in S'$.
-By definition of $M$, there exists $M' \in \text{GL}_2(\Z/p^{kmax})$
+By definition of $M$, there exists $M' \in \GL_2(\Z/p^{kbig}\Z)$
 of the form $M' = \begin{pmatrix}
 a' & b' \\ c' & d'
 \end{pmatrix}$ having trace $t$ and determinant $D$ and
@@ -333,7 +320,7 @@ U^{-1} = \begin{pmatrix}
 1 & 0 \\ 0 & u^{-1}
 \end{pmatrix}.
 \]
-Let $N' \in \text{GL}_2(\Z/p^{kmax})$ be defined by 
+Let $N' \in \GL_2(\Z/p^{kbig}\Z)$ be defined by 
 \[
 N' = U^{-1}MU 
 = \begin{pmatrix}
@@ -341,8 +328,8 @@ a' & b'u \\ c'u^{-1} & d'
 \end{pmatrix}.
 \]
 Then, $N'$ has trace $t$ and determinant $D$, and that 
-$b'u \equiv p^v u \mod p^n$.
-Hence, $N' \bmod p^n \in S'$.
+$b'u \equiv p^v u \bmod p^n$.
+Hence, $N = N' \bmod p^n \in S'$.
 
 \
 
@@ -365,16 +352,16 @@ a_1 & p^v u \\ c_1u^{-1} & d_1
 a_2 & p^v u \\ c_2u^{-1} & d_2
 \end{pmatrix}
 \]  
-Since $p \nmid u^{-1}$, the equality $M_1 = M_2$ follows.
+Since $p \nmid u$ and $p \nmid u^{-1}$, the equality $M_1 = M_2$ follows.
 
 \
 
 Finally, we want to show that the map is surjective.
 Let $N = \begin{pmatrix}
 a & p^v u \\ cu^{-1} & d
-\end{pmatrix} \in S'$.
+\end{pmatrix} \in S'$ (any matrix in $S'$ can be written in this form).
 Let $M = \begin{pmatrix}
-a & p^v \\ cu^{-1} & d
+a & p^v \\ c & d
 \end{pmatrix}$.
 If $N'$ is the lift of $N$, then we define 
 $M' = U^{-1}N'U$ and a similar argument from the previous paragraph 
@@ -389,26 +376,21 @@ between $S$ and $S'$ so that $|S| = |S'|$.
 \
 
 By Lemma 2, for ratio 2, we only need to 
-consider the reduced matrices with $b' = p^v$ for $1 \leq v \leq kmax-1$ and $b' = 0$.
-The function \texttt{count\_matrices2}, which counts the number of matrices 
-satisfying the numerator condition, first go through $j$ from 1 to $n-1$,
-and then for each $j$, we loop through $a$ from 0 to $p^{kmax} - 1$
-and check all corresponding $b$ in $[0, p^{kmax}]$ with $v_p(b) = j$
-and $b \equiv p^j \mod p^n$.
-The complete version of the code will not be included since it is too long
-(look at the corresponding CoCalc file).
-However, we will take a look more closely 
-at two helper functions: \texttt{helper\_fn} and \texttt{helper\_fn2},
-which reduce a lot of repetitions (of $b$ and $c$) to make the code more efficient.
-
-\
-
+consider the reduced matrices with $b = p^v$ for $1 \leq v < kbig$ and $b = 0$.
+% The function \texttt{ratio2}, which counts the number of matrices 
+% satisfying the numerator condition, first go through $j$ from 1 to $n-1$,
+% and then for each $j$, we loop through $a$ from 0 to $p^{kbig} - 1$
+% and check all corresponding $b$ in $[0, p^{kbig}]$ with $v_p(b) = j$
+% and $b \equiv p^j \mod p^n$.
+Before going to the main function \texttt{ratio2}, we will take a look more closely 
+at two helper functions: \texttt{ratio2\_adder} and \texttt{ratio2\_adder\_with\_check},
+which reduce a lot of repetitions (of $b$ and $c$) to make the program more efficient.
 Below is the code for the function \texttt{helper\_fn}.
 
-\begin{algorithm}
-\caption{Helper Function}
+\begin{algorithm}[H]
+\caption{Helper Function 1}
 \begin{algorithmic}[1]
-\Function{helper\_fn}{$p, n, k_{\max}, \text{projset}, \text{rhs\_new}, a, \text{ind}, d, \text{exp}$}
+\Function{ratio2\_adder}{$p, n, kbig, \text{projset}, \text{rhs\_new}, a, \text{ind}, \text{exp}$}
     \State $R_n \gets \mathbb{Z}/p^n\mathbb{Z}$
     \State $c_{\text{start}} \gets \left( \frac{\text{rhs\_new}}{\text{ind}} \right) \bmod p^{k_{\max} - \text{exp}}$
     \If{$\big( R_n(a),\; R_n(c_{\text{start}}),\; R_n(d) \big) \in \text{projset}$}
@@ -438,13 +420,13 @@ then there is no need to check further $b$ or $c$ for this fixed $a$.
 
 Let $M = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$ 
 be the matrix that we are considering
-with entries in $\Z / p^{kmax}$ and
+with entries in $\Z / p^{kbig}$ and
 $M' = \begin{pmatrix} a' & b' \\ c' & d' \end{pmatrix}$
 with $M \equiv M' \bmod p^n$ and $v_p(b) = v_p(b') = j$.
 We start with a more obvious simplification first, which is that 
 for this particular $a$ and $b$,
-there is no need to consider $M$ with $c + sp^{kmax-j}$ for any $s \in \mathbb{N}$
-since it will also be congruent to $M'$ with $c' + sp^{kmax-j}$.
+there is no need to consider $M$ with $c + sp^{kbig-j}$ for any $s \in \mathbb{N}$
+since it will also be congruent to $M'$ with $c' + sp^{kbig-j}$.
 This also applies for $j \geq n$.
 
 \
@@ -497,7 +479,7 @@ Note that for $j < n$, $l = n$, otherwise, $l = j$ as we only consider those
 $b$ with reduced form being $p^j$.
 Let $g = \frac{ad-D}{p^j}, r = (b / p^j)^{-1} = (b' / p^j + kp^{l-j})^{-1}$, and 
 $r' = (b' / p^j)^{-1}$.
-Then we have $c \equiv gr \bmod p^{kmax}$ and $c' \equiv gr' \bmod p^{kmax}$.
+Then we have $c \equiv gr \bmod p^{kbig}$ and $c' \equiv gr' \bmod p^{kbig}$.
 Hence, we have
 \[
 g(b' / p^j + kp^{l-j})^{-1} \equiv g(b' / p^j)^{-1} \bmod p^n
@@ -555,7 +537,7 @@ Below is the code for the function \texttt{helper\_fn2}.
 
 The only different things here is that we now have a dictionary called
 \texttt{lift} that keeps track on the pairing between the reduced matrix
-(entries in $\Z/p^n$) and the original matrix (entries in $\Z/p^{kmax}$).
+(entries in $\Z/p^n$) and the original matrix (entries in $\Z/p^{kbig}$).
 This is done to make sure that Lemma 2 and Lemma 3 work as 
 we require the assumption that $v_p(b) = v_p(b')$.
 Furthermore, if $b' = 0$, this means that we have covered 
