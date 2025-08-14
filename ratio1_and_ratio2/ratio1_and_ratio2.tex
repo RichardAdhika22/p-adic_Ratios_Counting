@@ -23,7 +23,8 @@
   bottom=1in
 }
 
-\newtheorem{lemma}{Lemma}
+\newtheorem{Lemma}{Lemma}
+\newtheorem{Theorem}{Theorem}
 \usepackage{enumerate}
 %%
 %% Fancy headers and footers - make the document look nice
@@ -46,7 +47,7 @@
 \begin{document}
 
 \begin{center}
-    {\bf \LARGE Ratio 1 and Ratio 2} \\
+    {\bf \Huge Ratio 1 and Ratio 2} \\
     Richard Adhika
 \end{center}
 
@@ -57,17 +58,16 @@
 \
 
 For reasons coming from number theory, we are interested in computing the following two kinds of (closely related) ratios, for different primes $p$: 
-Let $t$ and $d$ be integers.  
-
+Let $t$ and $D$ be integers.  
 The first ratio is 
 \[
-\nu_{p, n} (t, d) = \frac{\#\{M\in \GL_2(\Z/p^n\Z) \vert M \text{ has trace } t \text{ and }  \det  D  \mod p^n\} }{p^{2n-2}(p^2-1)}.
+\nu_{p, n} (t, d) = \frac{\#\{M\in \GL_2(\Z/p^n\Z) \vert M \text{ has trace } t \text{ and } \det  D  \bmod p^n\} }{p^{2n-2}(p^2-1)}.
 \]
 
 This ratio is really interesting only when the \emph{discriminant} of the characteristic polynomial, i.e., 
 $t^2-4D$, is divisible by $p$ (and they get more interesting as the power of $p$ dividing the discriminant gets larger). 
-These stabilize when $n$ gets large (if $p$ doesn't divide the discriminant, they stabilize right away). 
-However,  we understand these quite well. We are more interested in the ones that come no from counting solutions $\mod p^n$, but from counting the \emph{reductions  $\mod p^n$ of solutions in $\Z_p$}. 
+This stabilizes when $n$ gets large (if $p$ doesn't divide the discriminant, they stabilize right away). 
+However, we understand these quite well. We are more interested in the ones that come not from counting solutions $\bmod p^n$, but from counting the \emph{reductions  $\bmod p^n$ of solutions in $\Z_p$}. 
 More precisely, we define 
 \[
 \mu_{p, n} (t, d) = \frac{\#\{M\in \GL_2(\Z/p^n\Z) \vert \exists M'\in \GL_2(\Z_p):  M' \text{ has trace } t \text{ and }  \det  D, \text { and } M' \bmod p^n = M \} } 
@@ -80,7 +80,7 @@ Since we cannot really handle full $p$-adic series in a computer code, we introd
 {p^{2n-2}(p^2-1)}.
 \]
 
-Again these stabilize eventually (as $n$ gets large, but we need $kbig>>n$), and again they are only interesting when a power of $p$ divides the discriminant (when it doesn't, these also stabilize at $n=1$ and are equal to $\nu_p$). 
+Again this stabilizes eventually (as $n$ gets large, but we need $kbig>>n$), and again it is only interesting when a power of $p$ divides the discriminant (when it doesn't, this also stabilizes at $n=1$ and are equal to $\nu_p$). 
 We want to know these numbers for various values of $t$, $d$, and $p$.
 The problem is that even if you let $p=5$ and $kbig=6$, it is already taking forever to compute 
 (using brute force method). 
@@ -92,21 +92,17 @@ The problem is that even if you let $p=5$ and $kbig=6$, it is already taking for
 \
 
 We first want to try to generate all matrices of the form 
-\[
-\begin{pmatrix}
-a & b \\ c & d
-\end{pmatrix}
-\]
+$\begin{pmatrix} a & b \\ c & d \end{pmatrix}$
 with $d \equiv t - a \bmod p^n$ and $ad - bc \equiv D \bmod p^n$ 
 for $a,b,c,d \in \Z/p^n\Z$.
+Note that throughout this file, this notation will be used when referring to a general $2\times2$ matrix.
 Here, we have 3 free parameters $a,b$, and $c$ since $d$ depends solely on $a$ for the given $t$.
 The naive brute force method is to loop
 through $[0, p^n-1]$ for each $a,b,c$ and then check the determinant condition.
 This takes $\bigO(p^{3n})$, which is very slow.
 Hence, the function \texttt{build\_matrices1} in the file 
-\emph{ratio1\_and\_ratio2.ipynb} aims to 
-generate the matrices more efficiently 
-(the pseudocode of the function is provided on the next page).
+\emph{ratio1\_and\_ratio2.ipynb} (as well as all other code discussed in this file) aims to 
+generate the matrices more efficiently.
 
 \
 
@@ -126,18 +122,18 @@ If $p \mid b$, then we have three cases as follows,
 
 \begin{enumerate}
 \item $p \nmid rhs$. This immediately tell us that (1) can't have any solution 
-if $p \mid b$. This corresponds to the facet that the loop in line 9 won't execute.
+if $p \mid b$. This corresponds to the fact that the loop in line 9 won't execute.
 
 \item $v_p(rhs) \geq 1$.
 If $v_p(b) > v_p(rhs)$, then (1) also can't have any solution.
 Hence, it suffices to check $b$ with $1 \leq v_p(b) \leq v_p(rhs)$ (line 10 with $v_p(b) = i$).
-Also $v_p(rhs) < n$ so the modulo is well-defined.
 Then, for each $i$, let $b = p^i j$ so that we can rewrite (1) as 
 \[
 p^i j \cdot c \equiv rhs \bmod p^n,
 \]
 We then get $c \equiv (rhs / p^i) \cdot j^{-1} \bmod p^{n-i}$, 
 for which we lift $c$ to modulo $p^n$.
+Also $v_p(rhs) < n$ so the modulo is well-defined.
 
 \item $rhs \equiv 0 \bmod p^n$.
 Then, we can set $b=0$ so that all $c \in [0, p^n-1]$ satisfy (1) (line 14-16).
@@ -149,14 +145,14 @@ all $c$ with $v_p(c) = n-v_p(b)$ satisfy (1) (line 17 - 19).
 \caption{build\_matrices1}
 \begin{algorithmic}[1]
 \Function{build\_matrices1}{$n, p, t, D$}
-    \State $res \gets$ [ ], $Rn \gets \Z/p^n\Z$    
-    \ForAll{$a \in Rn$}
-        \State $rhs \gets Rn(D - a(t-a))$
+    \State $res \gets$ [ ], $R_n \gets \Z/p^n\Z$    
+    \ForAll{$a \in R_n$}
+        \State $rhs \gets R_n(D - a(t-a))$
         \State Add all tuples $(a,b,c,d)$ to $res$ such that $c \equiv rhs \cdot b^{-1} \bmod p^n$ with $p \nmid b$. \\
         
         \If{rhs $\neq 0$}
             \For{$i = 1$ to $v_p(rhs)$}
-                \For{$b \in Rn$ with $b = p^ij$ with $p \nmid j$}
+                \For{$b \in R_n$ with $b = p^ij$ with $p \nmid j$}
                     \State Add $(a,b,c,d)$ to $res$ with $c \in Rn$ satisfying $c \equiv rhs \cdot j^{-1} \bmod p^{n-i}$
                 \EndFor
             \EndFor
@@ -165,8 +161,8 @@ all $c$ with $v_p(c) = n-v_p(b)$ satisfy (1) (line 17 - 19).
                 \State Add $(a,0,c,d)$ to $res$
             \EndFor
 
-            \For{$b \in Rn$ with $v_p(b) = i \geq 1$}
-                \State Add $(a,b,c,d)$ to $res$ with $c \in Rn$ satisfying $v_p(c) = n-i$
+            \For{$b \in R_n$ with $v_p(b) = i \geq 1$}
+                \State Add $(a,b,c,d)$ to $res$ with $c \in R_n$ satisfying $v_p(c) = n-i$
             \EndFor
         \EndIf
     \EndFor
@@ -176,10 +172,10 @@ all $c$ with $v_p(c) = n-v_p(b)$ satisfy (1) (line 17 - 19).
 \end{algorithm}
 
 Assuming $n$ is not large, this algorithm costs $\bigO(p^{2n})$,
-Notice that in the second case, we have that the number of matrices 
-with $b = b'$ satisfying $v_p(b') = v$ is the same as that of $b = p^v$
-as the loops in line 9-11 has the same step size.
 which is already quite an improvement from the brute force algorithm.
+Notice that in the second case, the number of matrices 
+with $b = b'$ satisfying $v_p(b') = v$ is the same as that of $b = p^v$
+as both corresponding loops in line 9-11 have the same step size.
 
 \
 
@@ -194,7 +190,7 @@ Hence, we have $p^{2n-1}(p-1)$ matrices in total with $p \nmid b$.
 \[
 \sum_{i=1}^k p^{n-i-1} \cdot (p-1) \cdot p^i = k p^{n-1}(p-1)
 \]
-many solutions that corresponds to $b$ with $v_p(b) \geq 1$.
+many solutions with $1 \leq v_p(b) \leq k$.
 The term $p^{n-i-1}(p-1)$ comes from the number of $b$
 with $v_p(b) = i$
 and the term $p^i$ comes from lifting the modulo from $p^{n-i}$ to $p^n$.
@@ -203,19 +199,19 @@ and the term $p^i$ comes from lifting the modulo from $p^{n-i}$ to $p^n$.
 p^n + \sum_{i=1}^{n-1} p^i (p^{n-i} - p^{n-i-1})
 = p^n + (n-1) (p^n - p^{n-1})
 \]
-many solutions corresponds to $b$ with $b = 0$ and $v_p(b) \geq 1$.
+many solutions with $b = 0$ and $v_p(b) \geq 1$.
 \end{itemize}
 
 With these in mind, we then write a function \texttt{ratio1}
-that count the number of matrices satisfying the numerator condition in $\bigO(p^n)$,.
-The code is as follows,
+that count the number of matrices satisfying the numerator condition in $\bigO(p^n)$.
+The pseudocode is as follows,
 \begin{algorithm}[H]
 \caption{ratio1}
 \begin{algorithmic}[1]
 \Function{ratio1}{$n, t, D$}
-    \State $count \gets p^n \cdot p^{n-1} \cdot (p - 1)$, $Rn \gets \text{Integers}(p^n)$
+    \State $count \gets p^n \cdot p^{n-1} \cdot (p - 1)$, $R_n \gets \text{Integers}(p^n)$
     \ForAll{$a \in R$}
-        \State $rhs \gets Rn(a(t-a) - D)$
+        \State $rhs \gets R_n(a(t-a) - D)$
 
         \If{$rhs \neq 0$}
             \State $count \gets count + v_p(b) \cdot p^{n-1} \cdot (p - 1)$
@@ -237,7 +233,8 @@ The code is as follows,
 For the second ratio, however, we still need to generate the matrices 
 as the reduction from $kbig$ to $n$ may not include every matrix that satisfies the constraint 
 in $\Z / p^n\Z$ (which is true if $p^l | t^2-4D$ for some $l \in \mathbb{N}$).
-The problem now is that generating and storing all such matrices takes 
+The problem now is that generating and storing all such matrices 
+in $\Z/p^{kbig}\Z$ and then reduce each one to mod $p^n$ takes 
 up a lot of time and space (e.g. for $p=5$ and $kbig=5$, we have around 11 million matrices
 and for $kbig=6$, CoCalc runs out of space).
 
@@ -245,21 +242,18 @@ and for $kbig=6$, CoCalc runs out of space).
 
 What if we don't actually need to generate all the matrices?
 The first observation is that 
-\begin{lemma}
-For any matrix $M = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$
-with entries in $\Z/p^{kbig}\Z$,
+\begin{Lemma}
+For any matrix $M = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \GL_2(\Z/p^{kbig}\Z)$,
 if $p \nmid b$, we only need to consider $a, b \in [0, p^n-1]$.
-\end{lemma}
+\end{Lemma}
 \begin{proof}
 Consider two matrices $\begin{pmatrix} a_1 & b_1 \\ c_1 & d_1 \end{pmatrix}$ and
 $\begin{pmatrix} a_2 & b_2 \\ c_2 & d_2 \end{pmatrix}$
-with $p \nmid b_1, b_2$.
+with $p \nmid b_1, b_2$, 
+$b_2 \equiv b_1 \bmod p^n$, and $a_2 \equiv a_1 \bmod p^n$.
 Let $rhs = a_1d_1-D \bmod p^{kbig}$.
 Then, the modular equation $b_1c_1 \equiv rhs \bmod p^{kbig}$ has a unique solution 
 $c_1 \equiv rhs \cdot b_1^{-1} \bmod p^{kbig}$ .
-Furthermore, the modular equation $b_2b_3 \equiv rhs \bmod p^{kbig}$
-also has a unique solution $b_3 \equiv rhs \cdot b_2^{-1} \bmod p^{kbig}$.
-Assume that $b_2 \equiv b_1 \bmod p^n$ and $a_2 \equiv a_1 \bmod p^n$.
 We therefore have
 \[
 d_2 \equiv t-a_2 \equiv t-a_1 \equiv d_1 \bmod p^n
@@ -282,7 +276,7 @@ Next, we have
 
 \
 
-\begin{lemma}
+\begin{Theorem}
 Let $A$ be the set of all $M \in \GL_2(\Z/p^n\Z)$ 
 such that there exists $M' \in \GL_2(\Z/p^{kbig}\Z)$ having 
 trace $t$ and determinant $D$, and that $M \equiv M' \bmod p^n$
@@ -291,8 +285,7 @@ Let $S \subset A$ with $b = p^v$ and
 $S' \subset A$ with $b = p^vu$ for some fixed $u$ with $p \nmid u$
 and $v < n$.
 Then, $|S| = |S'|$.
-\end{lemma}
-
+\end{Theorem}
 
 \begin{proof}
 Let $v \in [1, n-1]$ and $M = \begin{pmatrix}
@@ -306,7 +299,7 @@ a & p^vu \\ cu^{-1} & d
 \]
 First, we want to show that this mapping is well-defined 
 by showing that $N \in S'$.
-By definition of $M$, there exists $M' \in \GL_2(\Z/p^{kbig}\Z)$
+By the definition of $M$, there exists $M' \in \GL_2(\Z/p^{kbig}\Z)$
 of the form $M' = \begin{pmatrix}
 a' & b' \\ c' & d'
 \end{pmatrix}$ having trace $t$ and determinant $D$ and
@@ -364,7 +357,7 @@ Let $M = \begin{pmatrix}
 a & p^v \\ c & d
 \end{pmatrix}$.
 If $N'$ is the lift of $N$, then we define 
-$M' = U^{-1}N'U$ and a similar argument from the previous paragraph 
+$M' = U^{-1}N'U$ and a similar argument as before
 shows that $M \equiv M' \bmod   p^n$.
 Hence $M \in S$ and that $\phi(M) = N$ 
 so that $\phi$ is surjective.
@@ -372,181 +365,217 @@ Finally, we conclude that $\phi$ is a well-defined bijection
 between $S$ and $S'$ so that $|S| = |S'|$.
 \end{proof}
 
+\
+
+By Theorem 1, for ratio 2, we \emph{only} need to 
+consider the reduced matrices with $b = p^v$ for $1 \leq v < kbig$ and $b = 0$.
+There are still a few points that can be optimized especially with the heavy loops of 
+the parameters $b$ and $c$, which is what we are trying to do next.
 
 \
 
-By Lemma 2, for ratio 2, we only need to 
-consider the reduced matrices with $b = p^v$ for $1 \leq v < kbig$ and $b = 0$.
-% The function \texttt{ratio2}, which counts the number of matrices 
-% satisfying the numerator condition, first go through $j$ from 1 to $n-1$,
-% and then for each $j$, we loop through $a$ from 0 to $p^{kbig} - 1$
-% and check all corresponding $b$ in $[0, p^{kbig}]$ with $v_p(b) = j$
-% and $b \equiv p^j \mod p^n$.
+\begin{Theorem}
+Let $S \subset \GL_2(\Z / p^{kbig}\Z)$ be the set of all matrices that we have encountered so far in the loop, 
+having trace $t$ and determinant $D$. 
+Let $M = \begin{pmatrix} a_1 & b_1 \\ c_1 & d_1 \end{pmatrix} \in S$.
+Furthermore, let $N = \begin{pmatrix} a_2 & b_2 \\ c_2 & d_2 \end{pmatrix} \in \GL_2(\Z / p^{kbig}\Z)$ 
+be the matrix that we are considering
+with $N \equiv M \bmod p^n$ and $v_p(b) = v_p(b') = i$.
+Then, we don't need to consider all matrices of the form 
+$N' = \begin{pmatrix} a_2 & b_2' \\ c_2' & d_2 \end{pmatrix}$ for 
+\begin{itemize}
+\item $b_2' = b_2$ and $c_2' > c_2$ satisfying the determinant constraint, or
+\item $b_2' > b_2$ with $v_p(b_2') = i$ and for any $c_2'$ satisfying the determinant constraint.
+\end{itemize}
+\end{Theorem}
+
+\
+
+\begin{proof}
+To show the first point we want to show that
+we don't need to consider further $c$ values once we encounter such $N$.
+For any $s \in \mathbb{N}$ and
+for any matrix $N' = \begin{pmatrix} a_2 & b_2 \\ c_2 + sp^{kbig-i} & d_2 \end{pmatrix}$,
+we have $N' \equiv M' \bmod p^n$ 
+where $M' = \begin{pmatrix} a_1 & b_1 \\ c_1 + sp^{kbig-i} & d_1 \end{pmatrix}$.
+If either $a_2 > a_1$ or $b_2 > b_1$, it is clear that $M' \in S$.
+Otherwise, $c_2 > c_1$ so $M'$ must have also been considered earlier
+(in the code itself, this case won't happen since it is enough to consider all matrices with $c \in [0, p^n-1]$).
+
+\
+
+Next, we want to show that if $a_2 > a_1$, then the assumption also holds with $b_2 = p^i$
+and that we don't need to consider any matrix of the form 
+$N' = \begin{pmatrix} a_2 & sp^i \\ c_2' & d_2 \end{pmatrix}$ with $p \nmid s, s \geq 2$,
+and for any $c_2'$ satisfying the determinant constraint.
+Let $b_2 = p^i u$ with $p \nmid u$.
+We can then write $b_1 = p^i \beta' u$, $c_1 = \gamma' u^{-1}$, and 
+$c_1 = \gamma u^{-1}$ so that we have 
+\[
+\begin{pmatrix} a_2 & p^i u \\ \gamma u^{-1} & d_2 \end{pmatrix}
+\equiv \begin{pmatrix} a_1 & p^i \beta' u \\ \gamma' u^{-1} & d_1 \end{pmatrix} \bmod p^n.
+\]
+Since $p \nmid u, u^{-1}$, the equation above is equivalent to
+\[
+\begin{pmatrix} a_2 & p^i \\ \gamma & d_2 \end{pmatrix}
+\equiv \begin{pmatrix} a_1 & p^i \beta'\\ \gamma' & d_21\end{pmatrix} \bmod p^n.
+\]
+Since the right matrix is in $S$, the left matrix doesn't give any new reduced matrix
+so that the assumption also holds for $b_2 = p^i$.  
+Then, for any $s \in \mathbb{N}$ with $p \nmid s$, we have 
+\[
+\begin{pmatrix} a_2 & p^js \\ \gamma s^{-1} & d_2 \end{pmatrix}
+\equiv \begin{pmatrix} a_1 & p^i \beta's\\ \gamma's^{-1} & d_1 \end{pmatrix} \bmod p^n,
+\]
+for which the right matrix is also in $S$.
+Together with the first point, this means that $N'$
+have the same reduced form as one of the matrices in $S$.
+
+\
+
+Otherwise, assume that $a_2 = a_1$. 
+Then $b_2 > b_1$, so let $b_2 = b_1 + s p^i$ for some $s \in \mathbb{N}$.
+Let $\alpha = \frac{a_2d_2-D}{p^i}$.
+Then we have 
+\[
+c_2 \equiv \alpha (b_1 / p^i + s)^{-1} \bmod p^{kbig-i}\; \text{ and } \;
+c_1 \equiv \alpha (b_1 / p^i)^{-1} \bmod p^{kbig-i}.
+\]
+Since $c_2 \equiv c_1 \bmod p^n$, we have
+\[
+\alpha (b_1 / p^i + s)^{-1} \equiv \alpha (b_1 / p^i)^{-1} \bmod p^n.
+\]
+Note that $(b_1 / p^i + s)^{-1}$ exists since $v_p(b_2) = i$ by assumption. 
+Let $b_2' = b_1+ (s+s')p^i$ with $s' \in \mathbb{N}$.
+First, assume that $v_p(\alpha) < n$ so that $s \equiv 0 \bmod p$.
+We then have 
+\[
+c_2' \equiv \alpha (b_1 / p^i + (s+s'))^{-1} \equiv \alpha (b_1 / p^i + s')^{-1} \bmod p^n.
+\]
+Note that $(b_1/p^i + s')^{-1}$ exists since $b_1/p^i + s' \equiv b_1/p^i + s'+ s' \not\equiv 0 \bmod p$. 
+Hence, we have 
+\begin{equation}
+\begin{pmatrix} a_2 & b_1 + (s+s')p^i \\ c_2' & d_2 \end{pmatrix}
+\equiv \begin{pmatrix} a_1 & b_1 + s'p^i \\ c_1' & d_1 \end{pmatrix} \bmod p^n,
+\end{equation}
+where $c_1' \equiv \alpha (b_1 / p^i + s')^{-1} \bmod p^n$.
+If $v_p(\alpha) \geq n$, then (2) also holds with $c_2' \equiv c_1' \equiv 0 \bmod p^n$.
+In both cases, we get that the reduced form of $N'$ has been considered earlier.
+Hence combined with the first point, we don't need to consider all such $N'$.
+
+\end{proof}
+
+\
+
+By Theorem 2, for a fixed $a$, once we encounter such $N$ in the code,
+we can directly move on to another value of $a$.
 Before going to the main function \texttt{ratio2}, we will take a look more closely 
 at two helper functions: \texttt{ratio2\_adder} and \texttt{ratio2\_adder\_with\_check},
-which reduce a lot of repetitions (of $b$ and $c$) to make the program more efficient.
-Below is the code for the function \texttt{helper\_fn}.
+which reduce a lot of repetitions (of $b$ and $c$) to make the code more efficient
+by utilizing Theorem 2.
+Below is the pseudocode for the function \texttt{ratio2\_adder}.
 
 \begin{algorithm}[H]
 \caption{Helper Function 1}
 \begin{algorithmic}[1]
-\Function{ratio2\_adder}{$p, n, kbig, \text{projset}, \text{rhs\_new}, a, \text{ind}, \text{exp}$}
-    \State $R_n \gets \mathbb{Z}/p^n\mathbb{Z}$
-    \State $c_{\text{start}} \gets \left( \frac{\text{rhs\_new}}{\text{ind}} \right) \bmod p^{k_{\max} - \text{exp}}$
-    \If{$\big( R_n(a),\; R_n(c_{\text{start}}),\; R_n(d) \big) \in \text{projset}$}
+\Function{ratio2\_adder}{$p, n, kbig, \text{projset}, a, c_s, exp, R_n$}
+    \If{$\big( R_n(a),\; R_n(c_{\text{start}})\big) \in \text{projset}$}
         \State \Return \textbf{false}
     \EndIf
-    \State Add $\big( R_n(a),\; R_n(c_{\text{start}}),\; R_n(d) \big)$ to \text{projset}
+    \State Add $\big( R_n(a),\; R_n(c_{\text{start}}) \big)$ to \text{projset}
     \For{$c$ from $c_{\text{start}} + p^{k_{\max} - \text{exp}}$ to $p^n - 1$ step $p^{k_{\max} - \text{exp}}$}
-        \State Add $\big( R_n(a),\; R_n(c),\; R_n(d) \big)$ to \text{projset}
+        \State Add $\big( R_n(a),\; R_n(c) \big)$ to \text{projset}
     \EndFor
     \State \Return \textbf{true}
 \EndFunction
 \end{algorithmic}
 \end{algorithm}
 
-Note that we use this function only for $j < n$.
-The parameter rhs\_new in this function denotes 
-$\frac{ad-D}{p^j}$, ind denotes $\frac{b}{p^j}$ with 
-$p \nmid $ ind, and exp denotes $j$ (we will still use $j$ in the explanation below, 
-the use of $exp$ is just for code readability).
-If this helper function returns false, then we stop the loop 
-of $b$ and immediately proceed to the next $a$ in the function \texttt{count\_matrices2}.
-What this is saying is that if we encounter one reduced matrix 
-that has been considered before (either for smaller $a$ or $b$),
-then there is no need to check further $b$ or $c$ for this fixed $a$.
+Note that we use this function only for $v_p(b) < n$
+as the $b$ entry in all matrices in $projset$ has the same $p$-valuation.
+The parameter $projset$ keeps track of the reduced matrices we encounter so far,
+$c_s$ denotes the smallest solution of $c$ when solving the determinant constraint, and 
+$exp$ denotes $v_p(b)$.
+This function returns false if we encounter one reduced matrix 
+that has been considered earlier so that the function \texttt{ratio2} can break out of the loop.
+For $v_p(b) \geq n$, we have the following similar helper function instead,
 
-\
-
-Let $M = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$ 
-be the matrix that we are considering
-with entries in $\Z / p^{kbig}$ and
-$M' = \begin{pmatrix} a' & b' \\ c' & d' \end{pmatrix}$
-with $M \equiv M' \bmod p^n$ and $v_p(b) = v_p(b') = j$.
-We start with a more obvious simplification first, which is that 
-for this particular $a$ and $b$,
-there is no need to consider $M$ with $c + sp^{kbig-j}$ for any $s \in \mathbb{N}$
-since it will also be congruent to $M'$ with $c' + sp^{kbig-j}$.
-This also applies for $j \geq n$.
-
-\
-
-With this, we want to show that 
-\begin{lemma}
-If $M$ is the first matrix that satisfies the congruence for this particular $a$, then
-$a > a'$ if and only if $b = p^j$.
-Furthermore, we don't need to consider any $b_0 > b$ for this particular $a$.
-\end{lemma}
-
-\begin{proof}
-It is clear that if $b = p^j$, then $a > a'$ since
-otherwise if $a = a'$, then $b > b'$ so that $b \neq p^j$.
-Now assume that $a > a'$ and $b = p^j u $ 
-for some $u > 1$ and $p \nmid u$.
-We can then write $b' = p^j \beta' u$, $c' = \gamma' u^{-1}$, and 
-$c = \gamma u$. We have 
-\[
-\begin{pmatrix} a & p^j u \\ \gamma u^{-1} & d \end{pmatrix}
-\equiv \begin{pmatrix} a' & p^j \beta' u \\ \gamma' u^{-1} & d' \end{pmatrix} \bmod p^n.
-\]
-We can "remove" $u$ and $u^{-1}$ and the modular equation above will still hold.
-That is,
-\[
-\begin{pmatrix} a & p^j \\ \gamma & d \end{pmatrix}
-\equiv \begin{pmatrix} a' & p^j \beta'\\ \gamma' & d' \end{pmatrix} \bmod p^n.
-\]
-Hence, the reduced form of the matrix on the left hand side has also been considered before 
-so that we get $b = p^j$.
-Then, for any $v \in \mathbb{N}$ with $p \nmid v$, we have 
-\[
-\begin{pmatrix} a & p^jv \\ \gamma v^{-1} & d \end{pmatrix}
-\equiv \begin{pmatrix} a' & p^j \beta'v\\ \gamma'v^{-1} & d' \end{pmatrix} \bmod p^n
-\]
-so that we don't need to consider any $b > p^j$ anymore
-(as we don't need to consider all corresponding $c$'s as well).
-\end{proof}
-
-\
-
-Furthermore, we also have 
-\begin{lemma}
-If $a = a'$, and $M$ is the first matrix that satisfies the congruence,
-then we don't need to consider all $b_0 > b$. 
-\end{lemma}
-\begin{proof}
-Since $b > b'$, let $b = b' + k p^l$ for some $k \in \mathbb{N}$.
-Note that for $j < n$, $l = n$, otherwise, $l = j$ as we only consider those 
-$b$ with reduced form being $p^j$.
-Let $g = \frac{ad-D}{p^j}, r = (b / p^j)^{-1} = (b' / p^j + kp^{l-j})^{-1}$, and 
-$r' = (b' / p^j)^{-1}$.
-Then we have $c \equiv gr \bmod p^{kbig}$ and $c' \equiv gr' \bmod p^{kbig}$.
-Hence, we have
-\[
-g(b' / p^j + kp^{l-j})^{-1} \equiv g(b' / p^j)^{-1} \bmod p^n
-\]
-so that 
-\[
-kp^{l-j} \equiv 0 \bmod p^{\max(0, n - v_p(g))}.
-\]
-Since $M$ is the first such matrix, $k = p^{\max(0, n-l+j - v_p(g))}$
-and $b' = p^j$. 
-Since all $b_0 > b$ have the form $b_0 = b'+ (k+k_0)p^l$ with $k_0 \in \mathbb{N}$,
-and that 
-\[
-g(1 + (k+ k_0)p^{l-j})^{-1} \equiv g(1 + k_0p^{l-j})^{-1} \bmod p^n,
-\]
-all matrices of the form 
-$\begin{pmatrix} a & b_0 \\ c_0 & d \end{pmatrix}$
-have its reduced form been considered earlier.
-
-\end{proof}
-
-By Lemma 3 and Lemma 4, for a fixed $a$, we don't need 
-to consider further $b$ and $c$ values once we know that we 
-have encountered the reduced form before.
-
-\
-
-Below is the code for the function \texttt{helper\_fn2}.
-
-\begin{algorithm}
-\caption{\textsc{Helper\_fn2}$(p, n, k_{\max}, \text{projset}, \text{lift}, \text{rhs\_new}, a, \text{ind}, d, \text{exp})$}
+\begin{algorithm}[H]
+\caption{Helper Function 2}
 \begin{algorithmic}[1]
-\State $R_n \gets \mathbb{Z}/p^n\mathbb{Z}$
-\State $R_{k_{\max}} \gets \mathbb{Z}/p^{k_{\max}}\mathbb{Z}$
-\State $c_{\text{start}} \gets \bigl( \frac{\text{rhs\_new}}{\text{ind}} \bigr) \bmod p^{k_{\max} - \text{exp}}$
-
-\If{$(R_n(a),\ R_n(c_{\text{start}}),\ R_n(d)) \in \text{projset}$}
-    \State $\text{lifted} \gets \text{lift}[(R_n(a),\ R_n(c_{\text{start}}),\ R_n(d))]$
-    \If{$\text{lifted}[1] = 0$ \textbf{or} $\text{valuation}_p(\text{lifted}[1]) = \text{exp}$}
-        \State \Return \textbf{false}
+\Function{ratio2\_adder\_with\_check}{$p, n, kbig, \text{lift\_dict}, a, b, c_s, exp, R_n, R_{kbig}$}
+    \If{lift\_dict has key $\big( R_n(a),\; R_n(c_s) \big)$}
+        \If{the corresponding lifted matrix has $v_p(b) = exp$ or $b \equiv 0 \bmod p^{kbig}$}
+            \State \Return \textbf{false}
+        \EndIf
     \EndIf
-\EndIf
-
-\State $\text{projset} \gets \text{projset} \cup \{(R_n(a), R_n(c_{\text{start}}), R_n(d))\}$
-\State $\text{lift}[(R_n(a), R_n(c_{\text{start}}), R_n(d))] \gets (a,\ R_{k_{\max}}(p^{\text{exp}} \cdot \text{ind}),\ c_{\text{start}},\ d)$
-
-\For{$c$ \textbf{from} $c_{\text{start}} + p^{k_{\max} - \text{exp}}$ \textbf{to} $p^n - 1$ \textbf{step} $p^{k_{\max} - \text{exp}}$}
-    \State $\text{lift}[(R_n(a), R_n(c), R_n(d))] \gets (a,\ R_{k_{\max}}(p^{\text{exp}} \cdot \text{ind}),\ c,\ d)$
-    \State $\text{projset} \gets \text{projset} \cup \{(R_n(a), R_n(c), R_n(d))\}$
-\EndFor
-
-\State \Return \textbf{true}
+    \State Add $\big( R_n(a),\; R_n(c_s) \big)$ as key and  $\big( R_{kbig}(a),\; R_{kbig}(b) ,\; R_{kbig}(c_s) \big)$ to lift\_dict
+    \For{$c$ from $c_s + p^{kbig - exp}$ to $p^n - 1$ step $p^{kbig - exp}$}
+        \State Add $\big( R_n(a),\; R_n(c) \big)$ as key and  $\big( R_{kbig}(a),\; R_{kbig}(b) ,\; R_{kbig}(c) \big)$ to lift\_dict
+    \EndFor
+    \State \Return \textbf{true}
+\EndFunction
 \end{algorithmic}
 \end{algorithm}
 
-The only different things here is that we now have a dictionary called
-\texttt{lift} that keeps track on the pairing between the reduced matrix
-(entries in $\Z/p^n$) and the original matrix (entries in $\Z/p^{kbig}$).
-This is done to make sure that Lemma 2 and Lemma 3 work as 
-we require the assumption that $v_p(b) = v_p(b')$.
-Furthermore, if $b' = 0$, this means that we have covered 
-all possible reduced form of $c$, so we don't need to 
-check anything for current $a$.
-As a sidenote, all the examples I ran works perfectly fine 
-without this helper function, meaning that one of
-$v_p(b) = v_p(b')$ or $b' = 0$ is guaranteed in this case.
-However, I am still having trouble proving it so I am still using this 
+The only different thing here is that we now have a dictionary called
+$lift\_dict$ that keeps track on the pairing between the reduced matrix
+(entries in $\Z/p^n\Z$) and the original matrix (entries in $\Z/p^{kbig}\Z$).
+This is done to make sure that Theorem 2 applies as 
+we require the assumption that the matrices compared have the same $p$-valuation of their corresponding $b$ entry.
+Furthermore, if $b \equiv 0 \bmod p^{kbig}$, this means that we have covered 
+all possible reduced form of $c$.
+
+\
+
+The function \texttt{ratio2} uses these two helper functions to 
+efficiently count the number of matrices satisfying the numerator of the second ratio.
+For $1 \leq v_p(b) \leq n-1$, the function uses \texttt{ratio2\_adder}
+and only uses set to keep track of the matrices encountered (only store the reduced matrices),
+which can be seen in line 3-17.
+On the other hand, for $v_p(b) \geq n$, the function uses 
+\texttt{ratio2\_adder\_with\_check} and uses dictionary to keep track of 
+both the reduced and original matrices.
+It is not easy to assess the asymptotic runtime of this function, but it takes only a few seconds
+to compute ratio2 for $p = 5, kmax = 9$.
+The pseudocode is as follows, 
+
+\begin{algorithm}[H]
+\caption{Ratio2}
+\begin{algorithmic}[1]
+\Function{ratio2}{$p, kbig, n, t, D$}
+    \State $count \gets p^{2n-1}(p-1)$, $R_n \gets \mathbb{Z}/p^n\mathbb{Z}$, $R_{kbig} \gets \mathbb{Z}/p^{kbig}\mathbb{Z}$
+    \For{$\exp = 1$ \textbf{to} $n-1$}
+        \State $projset \gets \emptyset$
+        \For{$a = 0$ \textbf{to} $p^{kbig}-1$}
+            \State $rhs \gets R_{kbig}(a \cdot (t-a) - D)$
+            \If{$rhs \ne 0$}
+                \If{$v_p(rhs) \geq exp$}
+                    \State for all $b = p^{exp}u$ with $p \nmid u$, let $c_s \equiv (rhs/p^{exp})u^{-1} \bmod p^{kbig-exp}$
+                    \State if $\mathrm{ratio2\_adder}(p,n,kbig,projset,a,c_s,\exp,R_n)$ is \textbf{false}, stop checking other $b$'s
+                \EndIf
+            \Else
+                \State $\mathrm{ratio2\_adder}(p,n,kbig,projset,a,0,\exp,R_n)$
+            \EndIf
+        \EndFor
+        \State $count \gets count + |projset| \cdot \big(p^{\,n-\exp} - p^{\,n-\exp-1}\big)$
+    \EndFor \\
+    \State $lift\_dict \gets \emptyset$
+    \For{$a = 0$ \textbf{to} $p^{kbig}-1$}
+        \State $rhs \gets R_{kbig}(a \cdot (t-a) - D)$
+        \If{$rhs \ne 0$}
+            \For{$\exp = n$ \textbf{to} $v_p(rhs)$}
+                \State for all $b = p^{exp}u$ with $p \nmid u$, let $c_s \equiv (rhs/p^{exp})u^{-1} \bmod p^{kbig-exp}$
+                \State if $\mathrm{ratio2\_adder\_with\_check}(p,n,kbig,lift\_dict,a,b,c_s,\exp,R_n, R_{kbig})$ is \textbf{false}, stop checking other $b$'s
+            \EndFor
+        \Else
+            \State $\mathrm{ratio2\_adder\_with\_check}(p,n,kbig,lift\_dict,a,0,0,kbig,R_n,R_{kbig})$
+        \EndIf
+    \EndFor
+    \State \Return $count + |\mathrm{lift\_dict}|$
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
 
 % \
 
