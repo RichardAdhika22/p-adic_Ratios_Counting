@@ -1,23 +1,30 @@
 %% Standard start of a latex document
 \documentclass[letterpaper,12pt]{article}
 %% Always use 12pt - it is much easier to read
-% \usepackage{algorithm}
-% \usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 \usepackage{float}
-\usepackage{xcolor}
 
 %% AMS mathematics packages - they contain many useful fonts and symbols.
 \usepackage{amsmath, amsfonts, amssymb}
-\usepackage{graphicx}
-\usepackage[linesnumbered, ruled, vlined]{algorithm2e}
-\usepackage{amsmath}
+
 
 %% The geometry package changes the margins to use more of the page, I suggest
 %% using it because standard latex margins are chosen for articles and letters,
 %% not homework.
 \usepackage[paper=letterpaper,left=25mm,right=25mm,top=3cm,bottom=25mm]{geometry}
 %% For details of how this package work, google the ``latex geometry documentation''.
+\usepackage{amsthm}
+\usepackage{geometry}
+\geometry{
+  left=0.7in,
+  right=0.7in,
+  top=0.8in,
+  bottom=1in
+}
 
+\newtheorem{Lemma}{Lemma}
+\newtheorem{Theorem}{Theorem}
 \usepackage{enumerate}
 %%
 %% Fancy headers and footers - make the document look nice
@@ -27,7 +34,10 @@
 %% This is a little more complicated because we have used `` \\ '' to force a line-break between the name and number.
 %%
 \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
 \newcommand{\bigO}{\mathcal{O}}
+\newcommand{\GL}{\mathbf {GL}}
 
 \cfoot{Page \thepage} % page in middle
 
@@ -35,40 +45,49 @@
 \renewcommand{\footrulewidth}{0.4pt}
 %%%
 
-%%%%%%
-%% We shouldnt have to change the stuff above, but if you want to add some newcommands and things like that, then putting them between here and the ``\begin{document}'' is a good idea.
-%%%%%%
-
-
 \begin{document}
-% Homework 0 does not contain any mathematics --- it is just for you to practice using latex. All I want you to do is to try to reproduce this document as well as you can. You do not have to hand it in. I don't mind if you work in small groups, but just copying it directly from a friend isn't going to help you later in the term.
 
 \begin{center}
-    {\LARGE \textbf{Ratio 3 Explanation/Justification and Examples}} \\
-    Third Draft
+    {\bf \Huge Ratio 3 and Ratio 4} \\
+    Richard Adhika
 \end{center}
 
 \
 
-Given $d_0$ small (e.g. 1, 2), a prime $p$,
-positive integers $n, k, e$ with $e, k < n$, and a diagonal matrix $M'$ with 
-entries congruent to each other modulo $p^{d_0}$, we are interested in finding matrices 
-$M \in \mathbb{Z}/p^n$ that satisfy the following,
-\begin{enumerate}
-\item having trace $t$ and determinant $D$ with 
-$t \equiv t_{M'} \bmod p^n$ and $D \equiv D_{M'} \bmod p^n$
-where $t_{M'}$ and $D_{M'}$ is the trace and determinant of $M'$ respectively, and 
-\item there exists $B \in \text{M}_2(\Z/p^n)$ such that 
-$MB \equiv BM' \bmod p^k$ and $v_p(\text{det}(B)) \leq e$.
-\end{enumerate}
-Then, we write the ratio as 
+{\bf \LARGE 1. Introduction}
+
+\
+
+Since in $\GL_2(\Q_p)$, conjugacy is the same as equality of characteristic polynomials, saying that $M'$ has the same trace and determinant as $M$ is equivalent to saying that there exists $\gamma\in \GL_2(\Q_p)$ such that 
+$M'=\gamma^{-1}M\gamma$, or $\gamma M'=M\gamma$.  
+Now, in the latter equality we can clear denominators, and think of $\gamma$ as a matrix in $M_2(\Z_p)$. This, however, creates a problem: 
+if we just want such a $\gamma$ from $M_2(\Z_p)$, it could make us lose information: for example if we take $\gamma=0$, any $M$ and $M'$ would satisfy this condition. 
+So we introduce a notion of `approximate $e$-conjugacy': 
+we say that $M$ is approximately $k$-conjugate to $M'$ if 
+$\gamma M \equiv M\gamma\bmod p^k$.
+To resolve the issue of \emph{losing} information, we want to restrict $\gamma$ to having 
+$v_p(\det(\gamma)) \leq e$ for some $e \in \N$, which defines how invertible $\gamma$ is.
+
+\
+
+With this, given a matrix $M' \in \GL_2(\Q_p)$ having trace $t$ and determinant $D$,
+we are interested in counting the number of $M \in \GL_2(\Z / p^n\Z)$ satisfying the following,
+\begin{itemize}
+\item $M$ is $\GL_2(\Q_p)$ conjugate to $M'$ (note that this is exactly the numerator condition of ratio 1), and
+\item there exists $\gamma \in M_2(\Z/p^n\Z)$ such that $M\gamma \equiv \gamma M' \bmod p^k$ with $v_p(\det(\gamma)) \leq e$.
+\end{itemize} 
+we are interested in the following ratio
 \[
-\theta_{p, n, k, e}(t, D) = 
-\frac{\#\{M \in \text{GL}_2(\Z / p^n) \; | \; M \text{ satisfies (1) and (2)}\}}{p^{2n-2}(p^2-1)}.
+\eta_{p, k, e}(t, D) = 
+\frac{\#\{M \in \GL_2(\Z / p^n\Z) \; | \; M \text{ satisfies (1) and (2)} \}}{p^{2n-2}(p^2-1)}.
 \]
-It is expected that the addition of mild conjugacy constraint does not affect
+The conjecture is that the addition of the approximate conjugacy constraint does not affect
 the ratio (give the same number as the first ratio) if $n \gg k$ 
-with $e$ (supposed to be) at least $d_0$ and less than $k$.
+and that the minimum $e$ is given by $v_p(t^2 - 4D)$.
+
+\
+
+{\bf \LARGE 2. Ratio 3}
 
 \
 
@@ -233,10 +252,6 @@ m_0m_3 - m_1m_2 - x(m_0 + m_3 - x)
 Similarly, we have $\text{det}(M_2) \equiv 0 \bmod p^k$.
 Hence, these two matrices have non-trivial kernel by the relationship 
 of determinant and kernel in the sense of linear algebra.
-\textcolor{red}{HOWEVER}, I still can't find the reason why 
-these two matrices always have the same kernel dimension
-(the number of linearly independent solution to the equation),
-which is observed when running the examples below.
 
 \
 
@@ -360,177 +375,6 @@ we just add the correpsponding count to our final result.
 This part can be found in the function \texttt{count\_matrices3}
 which sums up the whole procedure for counting ratio3.
 
-\
-
-Below is the pseudocode of \texttt{build\_matrices\_kernel}, \\
-
-    \begin{algorithm}
-    \caption{build\_matrices\_kernel}
-    \KwIn{$n, p$, target\_t, target\_det, $k$}
-    \KwOut{result dictionary}
-
-    result $\gets$ [ ]\;
-
-    $R_n \gets \text{Integers}(p^n)$\;
-
-    $R_k \gets \text{Integers}(p^k)$\;
-
-    trace $\gets R(\text{target\_t})$\;
-
-    det $\gets R(\text{target\_det})$\;
-
-    \For{$a \in [0, p^k-1]$}{
-        \For{$b \in [0, p^k-1]$}{
-            \If{$p \nmid b$}{
-                count\_dict(result, 
-                    $R_k(a, b, \frac{a(\text{trace} - a) - \text{det}}{b}, \text{trace} - a)$, 
-                    weight $p^{2(n-k)}$)\;
-            }
-        }
-    }
-
-\For{$a \in R$}{
-    rhs $\gets a(\text{trace} - a) - \text{det}$\;
-
-    \If{rhs $\neq 0$}{
-        $pval \gets \text{valuation of rhs at } p$\;
-
-        \For{$i \in [1, pval]$}{
-            rhs\_new $\gets \text{rhs} / p^i$\;
-
-            \If{$n - i \ge k$}{
-                count\_dict(result, 
-                    $R_k(a, p^i \cdot j, \text{rhs\_new} / j, d)$ 
-                    for all $j \in [p^i, p^i(p^k - 1)]$ with $p \nmid j$, 
-                    weight $p^{n-k}$)\;
-            }
-            \Else{
-                count\_dict(result, 
-                    $R_k(a, p^i \cdot j, c, d)$ 
-                    for all $j \in [p^i, p^i(p^{n-i}+1)]$ with $p \nmid j$ 
-                    and for all $c$ satisfying 
-                    $c \equiv \frac{\text{rhs\_new}}{j} \mod p^{n-i}$, 
-                    weight $p^{n-k}$)\;
-            }
-        }
-    }
-    \Else{
-        \For{$c \in [0, p^k-1]$}{
-            count\_dict(result, $R_k(a, 0, c, d)$, weight $p^{n-k}$)\;
-        }
-
-        \For{$b \in [p, p^k-1]$ step $p$}{
-            $pval \gets \text{valuation of } b$ at $p$\;
-
-            \If{$n - pval \ge k$}{
-                count\_dict(result, $R_k(a, b, 0, d)$, weight $p^{pval + n - k}$)\;
-            }
-            \Else{
-                count\_dict(result, 
-                    $R_k(a, b, c, d)$ 
-                    for all $c \in [0, p^k-1]$ with step $p^{n - pval}$, 
-                    weight $p^{2(n-k)}$)\;
-            }
-        }
-
-        \For{$pval \in [k, n]$}{
-            \If{$n - pval \ge k$}{
-                count\_dict(result, $R_k(a, 0, 0, d)$, 
-                    weight $p^{pval}(p^{n-pval} - p^{n-pval-1})$)\;
-            }
-            \Else{
-                count\_dict(result, 
-                    $R_k(a, 0, c, d)$ 
-                    for all $c \in [0, p^k-1]$ with step $p^{n - pval}$, 
-                    weight $p^{n-k}(p^{n-pval} - p^{n-pval-1})$)\;
-            }
-        }
-    }
-}
-
-\Return result\;
-
-\end{algorithm}
-
-\newpage
-
-A few examples are as follows:
-\begin{enumerate}
-\item $p=2, n=6, M' = \begin{pmatrix}
-1 & 0 \\ 0 & 1
-\end{pmatrix}.$ \\
-For ratio1 and ratio2 with $kmax = 7, \dots, 13$, we get \\
-\includegraphics[scale=0.5]{ex1_1.png} \\
-For ratio3, note that the output list below means 
-the parameter $k$ runs from 1 up to $n$.
-We get \\
-\includegraphics[scale=0.5]{ex1_2.png}
-
-\item $p=2, n=7, M' = \begin{pmatrix}
-1 & 0 \\ 0 & 1
-\end{pmatrix}.$ \\
-For ratio1 and ratio2 with $kmax = 8, \dots, 14$, we get \\
-\includegraphics[scale=0.5]{ex2_1.png} \\
-For ratio3, we get \\
-\includegraphics[scale=0.5]{ex2_2.png}
-
-\item $p=2, n=8, M' = \begin{pmatrix}
-1 & 0 \\ 0 & 1
-\end{pmatrix}.$ \\
-For ratio1 and ratio2 with $kmax = 9, \dots, 16$, we get \\
-\includegraphics[scale=0.5]{ex3_1.png} \\
-For ratio3, we get \\
-\includegraphics[scale=0.5]{ex3_2.png}
-
-\item $p=2, n=8, M' = \begin{pmatrix}
-3 & 0 \\ 0 & 7
-\end{pmatrix}.$ \\
-For ratio1 and ratio2 with $kmax = 9, \dots, 13$, we get \\
-\includegraphics[scale=0.5]{ex9_1.png} \\
-For ratio3, we get \\
-\includegraphics[scale=0.5]{ex9_2.png}
-
-\item $p=3, n=5, M' = \begin{pmatrix}
-1 & 0 \\ 0 & 4
-\end{pmatrix}.$ \\
-For ratio1 and ratio2 with $kmax = 6, \dots, 9$, we get \\
-\includegraphics[scale=0.5]{ex4_1.png} \\
-For ratio3, we get \\
-\includegraphics[scale=0.5]{ex4_2.png}
-
-\item $p=3, n=6, M' = \begin{pmatrix}
-1 & 0 \\ 0 & 10
-\end{pmatrix}.$ \\
-For ratio1 and ratio2 with $kmax = 7, \dots, 10$, we get \\
-\includegraphics[scale=0.5]{ex5_1.png} \\
-For ratio3, we get \\
-\includegraphics[scale=0.5]{ex5_2.png}
-
-\item $p=3, n=6, M' = \begin{pmatrix}
-1 & 0 \\ 0 & 28
-\end{pmatrix}.$ \\
-For ratio1 and ratio2 with $kmax = 7, \dots, 10$, we get \\
-\includegraphics[scale=0.5]{ex6_1.png} \\
-For ratio3, we get \\
-\includegraphics[scale=0.5]{ex6_2.png}
-
-\item $p=5, n=4, M' = \begin{pmatrix}
-2 & 0 \\ 0 & 3
-\end{pmatrix}.$ \\
-For ratio1 and ratio2 with $kmax = 5, \dots, 10$, we get \\
-\includegraphics[scale=0.5]{ex7_1.png} \\
-For ratio3, we get \\
-\includegraphics[scale=0.5]{ex7_2.png}
-
-\item $p=5, n=4, M' = \begin{pmatrix}
-1 & 0 \\ 0 & 6
-\end{pmatrix}.$ \\
-For ratio1 and ratio2 with $kmax = 5, \dots, 10$, we get \\
-\includegraphics[scale=0.5]{ex8_1.png} \\
-For ratio3, we get \\
-\includegraphics[scale=0.5]{ex8_2.png}
-
-\end{enumerate}
 
 %% Anything that comes after the ``\end{document}'' will be ignored.
 \end{document}

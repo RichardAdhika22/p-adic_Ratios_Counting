@@ -1,7 +1,7 @@
-PWD d:\UBC courses\WLIURA 2025\ratio3_and_examples
+PWD d:\UBC courses\WLIURA 2025\p-adic_Ratios_Counting\ratio3_and_ratio4
 INPUT C:\Users\Richard Adhika\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT d:\UBC courses\WLIURA 2025\ratio3_and_examples\ratio3_and_examples.tex
-OUTPUT ratio3_and_examples.log
+INPUT d:\UBC courses\WLIURA 2025\p-adic_Ratios_Counting\ratio3_and_ratio4\ratio3_and_ratio4.tex
+OUTPUT ratio3_and_ratio4.log
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
@@ -18,6 +18,17 @@ INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\size1
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\size12.clo
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\size12.clo
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithms\algorithm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithms\algorithm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithms\algorithm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithms\algorithm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithms\algorithm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithms\algorithm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithms\algorithm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithms\algorithm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithms\algorithm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithms\algorithm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithms\algorithm.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
@@ -29,29 +40,42 @@ INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\float\floa
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\xcolor.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\color.cfg
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex.def
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex-dev\graphics\mathcolor.ltx
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex-dev\graphics\mathcolor.ltx
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex-dev\graphics\mathcolor.ltx
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex-dev\graphics\mathcolor.ltx
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algpseudocode.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algpseudocode.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algpseudocode.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algpseudocode.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algpseudocode.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algpseudocode.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algpseudocode.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algpseudocode.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algpseudocode.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algpseudocode.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algpseudocode.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algorithmicx.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algorithmicx.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algorithmicx.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algorithmicx.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algorithmicx.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algorithmicx.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algorithmicx.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algorithmicx.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algorithmicx.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algorithmicx.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithmicx\algorithmicx.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
@@ -134,110 +158,6 @@ INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\a
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\graphics.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\trig.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\trig.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\trig.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\trig.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\trig.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\trig.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\trig.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\trig.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\trig.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\trig.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\trig.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\graphics.cfg
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\graphics.cfg
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\graphics.cfg
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics-cfg\graphics.cfg
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithm2e\algorithm2e.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithm2e\algorithm2e.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithm2e\algorithm2e.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithm2e\algorithm2e.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithm2e\algorithm2e.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithm2e\algorithm2e.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithm2e\algorithm2e.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithm2e\algorithm2e.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithm2e\algorithm2e.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithm2e\algorithm2e.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\algorithm2e\algorithm2e.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\ifoddpage\ifoddpage.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\ifoddpage\ifoddpage.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\ifoddpage\ifoddpage.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\ifoddpage\ifoddpage.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\ifoddpage\ifoddpage.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\ifoddpage\ifoddpage.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\ifoddpage\ifoddpage.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\ifoddpage\ifoddpage.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\ifoddpage\ifoddpage.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\ifoddpage\ifoddpage.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\ifoddpage\ifoddpage.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\tools\xspace.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\tools\xspace.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\tools\xspace.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\tools\xspace.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\tools\xspace.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\tools\xspace.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\tools\xspace.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\tools\xspace.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\tools\xspace.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\tools\xspace.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\tools\xspace.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\relsize\relsize.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\relsize\relsize.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\relsize\relsize.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\relsize\relsize.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\relsize\relsize.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\relsize\relsize.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\relsize\relsize.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\relsize\relsize.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\relsize\relsize.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\relsize\relsize.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\relsize\relsize.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
@@ -249,6 +169,16 @@ INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\geometry\g
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\generic\iftex\ifvtex.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\generic\iftex\ifvtex.sty
@@ -276,6 +206,18 @@ INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\geometry\g
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.cfg
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.cfg
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.cfg
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\tools\enumerate.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\tools\enumerate.sty
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\tools\enumerate.sty
@@ -309,30 +251,12 @@ INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT .\ratio3_and_examples.aux
-INPUT ratio3_and_examples.aux
-INPUT ratio3_and_examples.aux
-OUTPUT ratio3_and_examples.aux
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
+INPUT .\ratio3_and_ratio4.aux
+INPUT ratio3_and_ratio4.aux
+INPUT ratio3_and_ratio4.aux
+OUTPUT ratio3_and_ratio4.aux
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
@@ -359,143 +283,18 @@ INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\u
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt12.tfm
-OUTPUT ratio3_and_examples.pdf
-INPUT C:\Users\Richard Adhika\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
-INPUT .\ex1_1.png
-INPUT .\ex1_1.png
-INPUT ex1_1.png
-INPUT .\ex1_1.png
-INPUT .\ex1_1.png
-INPUT .\ex1_1.png
-INPUT .\ex1_1.png
-INPUT .\ex1_2.png
-INPUT .\ex1_2.png
-INPUT ex1_2.png
-INPUT .\ex1_2.png
-INPUT .\ex1_2.png
-INPUT .\ex1_2.png
-INPUT .\ex1_2.png
-INPUT .\ex2_1.png
-INPUT .\ex2_1.png
-INPUT ex2_1.png
-INPUT .\ex2_1.png
-INPUT .\ex2_1.png
-INPUT .\ex2_1.png
-INPUT .\ex2_1.png
-INPUT .\ex2_2.png
-INPUT .\ex2_2.png
-INPUT ex2_2.png
-INPUT .\ex2_2.png
-INPUT .\ex2_2.png
-INPUT .\ex2_2.png
-INPUT .\ex2_2.png
-INPUT .\ex3_1.png
-INPUT .\ex3_1.png
-INPUT ex3_1.png
-INPUT .\ex3_1.png
-INPUT .\ex3_1.png
-INPUT .\ex3_1.png
-INPUT .\ex3_1.png
-INPUT .\ex3_2.png
-INPUT .\ex3_2.png
-INPUT ex3_2.png
-INPUT .\ex3_2.png
-INPUT .\ex3_2.png
-INPUT .\ex3_2.png
-INPUT .\ex3_2.png
-INPUT .\ex9_1.png
-INPUT .\ex9_1.png
-INPUT ex9_1.png
-INPUT .\ex9_1.png
-INPUT .\ex9_1.png
-INPUT .\ex9_1.png
-INPUT .\ex9_1.png
-INPUT .\ex9_2.png
-INPUT .\ex9_2.png
-INPUT ex9_2.png
-INPUT .\ex9_2.png
-INPUT .\ex9_2.png
-INPUT .\ex9_2.png
-INPUT .\ex9_2.png
-INPUT .\ex4_1.png
-INPUT .\ex4_1.png
-INPUT ex4_1.png
-INPUT .\ex4_1.png
-INPUT .\ex4_1.png
-INPUT .\ex4_1.png
-INPUT .\ex4_1.png
-INPUT .\ex4_2.png
-INPUT .\ex4_2.png
-INPUT ex4_2.png
-INPUT .\ex4_2.png
-INPUT .\ex4_2.png
-INPUT .\ex4_2.png
-INPUT .\ex4_2.png
-INPUT .\ex5_1.png
-INPUT .\ex5_1.png
-INPUT ex5_1.png
-INPUT .\ex5_1.png
-INPUT .\ex5_1.png
-INPUT .\ex5_1.png
-INPUT .\ex5_1.png
-INPUT .\ex5_2.png
-INPUT .\ex5_2.png
-INPUT ex5_2.png
-INPUT .\ex5_2.png
-INPUT .\ex5_2.png
-INPUT .\ex5_2.png
-INPUT .\ex5_2.png
-INPUT .\ex6_1.png
-INPUT .\ex6_1.png
-INPUT ex6_1.png
-INPUT .\ex6_1.png
-INPUT .\ex6_1.png
-INPUT .\ex6_1.png
-INPUT .\ex6_1.png
-INPUT .\ex6_2.png
-INPUT .\ex6_2.png
-INPUT ex6_2.png
-INPUT .\ex6_2.png
-INPUT .\ex6_2.png
-INPUT .\ex6_2.png
-INPUT .\ex6_2.png
-INPUT .\ex7_1.png
-INPUT .\ex7_1.png
-INPUT ex7_1.png
-INPUT .\ex7_1.png
-INPUT .\ex7_1.png
-INPUT .\ex7_1.png
-INPUT .\ex7_1.png
-INPUT .\ex7_2.png
-INPUT .\ex7_2.png
-INPUT ex7_2.png
-INPUT .\ex7_2.png
-INPUT .\ex7_2.png
-INPUT .\ex7_2.png
-INPUT .\ex7_2.png
-INPUT .\ex8_1.png
-INPUT .\ex8_1.png
-INPUT ex8_1.png
-INPUT .\ex8_1.png
-INPUT .\ex8_1.png
-INPUT .\ex8_1.png
-INPUT .\ex8_1.png
-INPUT .\ex8_2.png
-INPUT .\ex8_2.png
-INPUT ex8_2.png
-INPUT .\ex8_2.png
-INPUT .\ex8_2.png
-INPUT .\ex8_2.png
-INPUT .\ex8_2.png
-INPUT ratio3_and_examples.aux
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
+OUTPUT ratio3_and_ratio4.pdf
+INPUT C:\Users\Richard Adhika\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt12.tfm
+INPUT ratio3_and_ratio4.aux
+INPUT C:\Users\Richard Adhika\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
+INPUT C:\Users\Richard Adhika\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx8.pfb
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx8.pfb
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
@@ -504,14 +303,10 @@ INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\a
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
-INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
