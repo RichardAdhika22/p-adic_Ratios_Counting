@@ -269,8 +269,19 @@ we must have encountered so in the first step.
 Lastly, any combination of three or more kernel basis vectors also 
 have its $p$-valuation of determinant already considered as part of step 2.
 
+\vspace{0.6in}
+
+{\bf \LARGE 3. Ratio 4}
+
 \
 
+Only a few things are different than the process of finding ratio 3.
+First, instead of using \texttt{build\_matrices1} from ratio1,
+we will use \texttt{ratio2} function from computing ratio 2.
+The slight modification in the function is that we need to store all the reduced matrices
+instead of just counting them, and that we need to consider every $b \in [0, p^{kbig - i}]$,
+not just $b = p^i$ for $1 \leq i \leq n-1$.
+Everything else is very similar to that of ratio 3.
 
 %% Anything that comes after the ``\end{document}'' will be ignored.
 \end{document}
