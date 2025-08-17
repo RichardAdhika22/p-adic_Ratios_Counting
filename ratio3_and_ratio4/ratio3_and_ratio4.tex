@@ -185,6 +185,10 @@ We only need to create and store $p^n$ of all such $4 \times 4$ matrices (for $a
 rather than creating one each time we are checking a new matrix.
 For any fixed $a$, there are only 4 entries of the corresponding matrix
 that vary (line 5-6).
+Lastly, we have the dictionary 'ker\_hist' that stores a kernel vector as its key and the minimal 
+$p$-valuation of the corresponding determinant as its value. 
+This is done because I notice there are repeated kernels for 
+different matrices, hence checking the determinant only once may be more efficient.
 
 \
 

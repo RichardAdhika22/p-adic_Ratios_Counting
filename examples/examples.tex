@@ -17,7 +17,13 @@
 %% not homework.
 \usepackage[paper=letterpaper,left=25mm,right=25mm,top=3cm,bottom=25mm]{geometry}
 %% For details of how this package work, google the ``latex geometry documentation''.
-
+\usepackage{geometry}
+\geometry{
+  left=0.5in,
+  right=0.5in,
+  top=0.8in,
+  bottom=1in
+}
 \usepackage{enumerate}
 %%
 %% Fancy headers and footers - make the document look nice
@@ -44,118 +50,153 @@
 % Homework 0 does not contain any mathematics --- it is just for you to practice using latex. All I want you to do is to try to reproduce this document as well as you can. You do not have to hand it in. I don't mind if you work in small groups, but just copying it directly from a friend isn't going to help you later in the term.
 
 \begin{center}
-    {\LARGE \textbf{Examples}} \\
-    First Draft
+    {\Huge \textbf{Examples}} \\
+    Richard Adhika
 \end{center}
 
 \
 
-In this file, I will try to run through some examples 
-for ratio 1, 2, and 3 with our program so far. 
-For outputs of ratio 2, the array represents different $kmax = n+1,\dots$.
-For outputs of ratio 3, each line represents different values of $e$
-(the bound on $p$-valuation of the determinant of the solution), and for each $e$,
-the array represents the ratio for $k = 1, \dots, n$ in order.
-The following runtime may be inaccurate as (for some unknown reason),
+In this file, we run through some examples 
+for ratio 1, 2, 3, and 4 (the code can be found in the following files:
+'ratio1\_and\_ratio.ipynb', 'ratio3.ipynb', and 'ratio4.ipynb'). 
+For outputs of ratio 2, the array represents increasing $kbig$ as specified in each example.
+For outputs of ratio 3 and ratio 4, the array represents increasing $e = 0, 1, \dots$.
+Lastly, for ratio 4, we use $kbig$ to be the largest of the ones used in ratio 2 in the same example. 
+The following runtime may be inaccurate as (for some unknown reason)
 running Julia in WSL (Windows Subsystem for Linux) can cause inconsistent runtime 
-(as much as a factor of 3!).
+(as much as a factor of 2!).
 The examples are as follows,
 \begin{enumerate}
-\item $p=2, n=7, M' = \begin{pmatrix}
+\item $p=2, n=9, M' = \begin{pmatrix}
 1 & 0 \\ 0 & 3
 \end{pmatrix}.$ \\
-For $kmax = 8, \dots, 15$, we get \\
-\includegraphics[scale=0.4]{ex1.png} \\
-
-\item $p=2, n=7, M' = \begin{pmatrix}
-1 & 0 \\ 0 & 5
-\end{pmatrix}.$ \\
-For $kmax = 8, \dots, 15$, we get \\
-\includegraphics[scale=0.4]{ex2.png} \\
-
-\item $p=2, n=8, M' = \begin{pmatrix}
-1 & 0 \\ 0 & 5
-\end{pmatrix}.$ \\
-For $kmax = 9, \dots, 15$, we get \\
-\includegraphics[scale=0.4]{ex3.png} \\
-
-\item $p=2, n=9, M' = \begin{pmatrix}
-1 & 0 \\ 0 & 5
-\end{pmatrix}.$ \\
-For $kmax = 10, \dots, 15$, we get \\
-\includegraphics[scale=0.4]{ex4.png} \\
-
-\item $p=2, n=10, M' = \begin{pmatrix}
-1 & 0 \\ 0 & 5
-\end{pmatrix}.$ \\
-For $kmax = 11, \dots, 15$, we get \\
-\includegraphics[scale=0.4]{ex5.png} \\
+For ratio 2 with $kbig = 10, \dots, 17$, ratio 3 with $e = 0, \dots, 5$, $k=n$, and ratio 4 with $kbig = 17$, we get \\
+\fbox{\includegraphics[scale = 0.5]{p2_1.png}} \\
+For ratio 3 with $k = 1, \dots, 8$, we get \\
+\fbox{\includegraphics[scale = 0.5]{n2_1.png}} \\
 
 \item $p=2, n=11, M' = \begin{pmatrix}
 1 & 0 \\ 0 & 5
 \end{pmatrix}.$ \\
-For $kmax = 12, \dots, 15$, we get \\
-\includegraphics[scale=0.4]{ex8.png} \\
-
-\item $p=2, n=10, M' = \begin{pmatrix}
-1 & 0 \\ 0 & 9
-\end{pmatrix}.$ \\
-For $kmax = 11, \dots, 15$, we get \\
-\includegraphics[scale=0.4]{ex6.png} \\
+For ratio 2 with $kbig = 12, \dots, 17$, ratio 3 with $e = 0, \dots, 6$, $k=n$, and ratio 4 with $kbig = 17$, we get \\
+\fbox{\includegraphics[scale = 0.5]{p2_2.png}} \\
+For ratio 3 with $k = 1, \dots, 11$, we get \\
+\fbox{\includegraphics[scale = 0.4]{n2_2.png}} \\
 
 \item $p=2, n=11, M' = \begin{pmatrix}
 1 & 0 \\ 0 & 9
 \end{pmatrix}.$ \\
-For $kmax = 12, \dots, 15$, we get \\
-\includegraphics[scale=0.4]{ex7.png} \\
+For ratio 2 with $kbig = 12, \dots, 17$, ratio 3 with $e = 0, \dots, 7$, $k=n$, and ratio 4 with $kbig = 17$, we get \\
+\fbox{\includegraphics[scale = 0.5]{p2_3.png}} \\
+For ratio 3 with $k = 1, \dots, 11$, we get \\
+\fbox{\includegraphics[scale = 0.5]{n2_3.png}} \\
 
 \item $p=3, n=6, M' = \begin{pmatrix}
 1 & 0 \\ 0 & 4
 \end{pmatrix}.$ \\
-For $kmax = 7, \dots, 12$, we get \\
-\includegraphics[scale=0.4]{ex9.png} \\
-
-\item $p=3, n=6, M' = \begin{pmatrix}
-1 & 0 \\ 0 & 10
-\end{pmatrix}.$ \\
-For $kmax = 7, \dots, 12$, we get \\
-\includegraphics[scale=0.4]{ex10.png} \\
+For ratio 2 with $kbig = 7, \dots, 12$, ratio 3 with $e = 0, \dots, 6$, $k=n$, and ratio 4 with $kbig = 12$, we get \\
+\fbox{\includegraphics[scale = 0.5]{p3_1.png}} \\
+For ratio 3 with $k = 1, \dots, 6$, we get \\
+\fbox{\includegraphics[scale = 0.5]{n3_1.png}} \\
 
 \item $p=3, n=7, M' = \begin{pmatrix}
 1 & 0 \\ 0 & 10
 \end{pmatrix}.$ \\
-For $kmax = 8, \dots, 12$, we get \\
-\includegraphics[scale=0.4]{ex11.png} \\
+For ratio 2 with $kbig = 8, \dots, 12$, ratio 3 with $e = 0, \dots, 7$, $k=n$, and ratio 4 with $kbig = 12$, we get \\
+\fbox{\includegraphics[scale = 0.5]{p3_2.png}} \\
+For ratio 3 with $k = 1, \dots, 7$, we get \\
+\fbox{\includegraphics[scale = 0.5]{n3_2.png}} \\
 
 \item $p=3, n=7, M' = \begin{pmatrix}
 1 & 0 \\ 0 & 28
 \end{pmatrix}.$ \\
-For $kmax = 8, \dots, 12$, we get \\
-\includegraphics[scale=0.4]{ex12.png} \\
+For ratio 2 with $kbig = 8, \dots, 12$, ratio 3 with $e = 0, \dots, 7$, $k=n$, and ratio 4 with $kbig = 12$, we get \\
+\fbox{\includegraphics[scale = 0.5]{p3_3.png}} \\
+For ratio 3 with $k = 1, \dots, 7$, we get \\
+\fbox{\includegraphics[scale = 0.5]{n3_3.png}} \\
+
+\item $p=3, n=7, M' = \begin{pmatrix}
+1 & 0 \\ 0 & 82
+\end{pmatrix}.$ \\
+For ratio 2 with $kbig = 8, \dots, 12$, ratio 3 with $e = 0, \dots, 7$, $k=n$, and ratio 4 with $kbig = 12$, we get \\
+\fbox{\includegraphics[scale = 0.45]{p3_4.png}} \\
+For ratio 3 with $k = 1, \dots, 7$, we get \\
+\fbox{\includegraphics[scale = 0.5]{n3_4.png}} \\
+
+In this example, the reason why ratio 3 isn't eventually equal to ratio 1 
+is because the minimum $3$-valuation of the conjugacy matrix of some matrices
+is greater than or equal to 7.
+Therefore, since $n=7$, those determinant is treated as zero and 
+doesn't contribute to the count.
+Higher $n$ is needer to properly evaluate ratio 3 in this example.
 
 \item $p=3, n=7, M' = \begin{pmatrix}
 1 & 6 \\ 3 & 1
 \end{pmatrix}.$ \\
-For $kmax = 8, \dots, 12$, we get \\
-\includegraphics[scale=0.4]{ex13.png} \\
+For ratio 2 with $kbig = 8, \dots, 12$, ratio 3 with $e = 0, \dots, 7$, $k=n$, and ratio 4 with $kbig = 12$, we get \\
+\fbox{\includegraphics[scale = 0.5]{p3_5.png}} \\
+For ratio 3 with $k = 1, \dots, 7$, we get \\
+\fbox{\includegraphics[scale = 0.5]{n3_5.png}} \\
 
 \item $p=3, n=7, M' = \begin{pmatrix}
 1 & 18 \\ 9 & 1
 \end{pmatrix}.$ \\
-For $kmax = 8, \dots, 12$, we get \\
-\includegraphics[scale=0.4]{ex14.png} \\
+For ratio 2 with $kbig = 8, \dots, 12$, ratio 3 with $e = 0, \dots, 7$, $k=n$, and ratio 4 with $kbig = 12$, we get \\
+\fbox{\includegraphics[scale = 0.5]{p3_6.png}} \\
+For ratio 3 with $k = 1, \dots, 7$, we get \\
+\fbox{\includegraphics[scale = 0.5]{n3_6.png}} \\
 
-\item $p=5, n=5, M' = \begin{pmatrix}
+\item $p=3, n=7, M' = \begin{pmatrix}
+2 & -2 \\ 1 & 0
+\end{pmatrix}.$ \\
+For ratio 2 with $kbig = 8, \dots, 12$, ratio 3 with $e = 0, \dots, 7$, $k=n$, and ratio 4 with $kbig = 12$, we get \\
+\fbox{\includegraphics[scale = 0.5]{p3_7.png}} \\
+For ratio 3 with $k = 1, \dots, 7$, we get \\
+\fbox{\includegraphics[scale = 0.5]{n3_7.png}} \\
+
+\item $p=5, n=4, M' = \begin{pmatrix}
 1 & 0 \\ 0 & 6
 \end{pmatrix}.$ \\
-For $kmax = 6, \dots, 9$, we get \\
-\includegraphics[scale=0.4]{ex15.png} \\
+For ratio 2 with $kbig = 5, \dots, 9$, ratio 3 with $e = 0, \dots, 5$, $k=n$, and ratio 4 with $kbig = 9$, we get \\
+\fbox{\includegraphics[scale = 0.35]{p5_1.png}} \\
+For ratio 3 with $k = 1, \dots, 4$, we get \\
+\fbox{\includegraphics[scale = 0.5]{n5_1.png}} \\
+
+\item $p=5, n=5, M' = \begin{pmatrix}
+1 & 0 \\ 0 & 26
+\end{pmatrix}.$ \\
+For ratio 2 with $kbig = 6, \dots, 9$, ratio 3 with $e = 0, \dots, 7$, $k=n$, and ratio 4 with $kbig = 9$, we get \\
+\fbox{\includegraphics[scale = 0.35]{p5_2.png}} \\
+For ratio 3 with $k = 1, \dots, 5$, we get \\
+\fbox{\includegraphics[scale = 0.5]{n5_2.png}} \\
+
+\item $p=5, n=5, M' = \begin{pmatrix}
+1 & 0 \\ 0 & 126
+\end{pmatrix}.$ \\
+For ratio 2 with $kbig = 6, \dots, 9$, ratio 3 with $e = 0, \dots, 7$, $k=n$, and ratio 4 with $kbig = 9$, we get \\
+\fbox{\includegraphics[scale = 0.4]{p5_3.png}} \\
+For ratio 3 with $k = 1, \dots, 5$, we get \\
+\fbox{\includegraphics[scale = 0.45]{n5_3.png}} \\
+
+Note that this example has the same issue as example 7.
 
 \item $p=5, n=5, M' = \begin{pmatrix}
 1 & 10 \\ 5 & 1
 \end{pmatrix}.$ \\
-For $kmax = 6, \dots, 9$, we get \\
-\includegraphics[scale=0.4]{ex16.png} \\
+For ratio 2 with $kbig = 6, \dots, 8$, ratio 3 with $e = 0, \dots, 7$, $k=n$, and ratio 4 with $kbig = 8$, we get \\
+\fbox{\includegraphics[scale = 0.35]{p5_4(1).png}} \\
+\fbox{\includegraphics[scale = 0.5]{p5_4(2).png}} \\
+For ratio 3 with $k = 1, \dots, 5$, we get \\
+\fbox{\includegraphics[scale = 0.5]{n5_4.png}} \\
+
+\item $p=7, n=4, M' = \begin{pmatrix}
+1 & 0 \\ 0 & 8
+\end{pmatrix}.$ \\
+For ratio 2 with $kbig = 5, \dots, 7$, ratio 3 with $e = 0, \dots, 5$, $k=n$, and ratio 4 with $kbig = 7$, we get \\
+\fbox{\includegraphics[scale = 0.35]{p7_1(1).png}} \\
+\fbox{\includegraphics[scale = 0.35]{p7_1(2).png}} \\
+For ratio 3 with $k = 1, \dots, 5$, we get \\
+\fbox{\includegraphics[scale = 0.5]{n7_1.png}} \\
 
 \end{enumerate}
 

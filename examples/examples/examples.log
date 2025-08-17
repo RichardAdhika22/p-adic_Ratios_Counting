@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.25)  16 AUG 2025 22:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.25)  16 AUG 2025 14:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -301,344 +301,112 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
  (C:\Users\Richard Adhika\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<p2_1.png, id=1, 898.10532pt x 257.46187pt>
+<p2_1.png, id=1, 1087.06125pt x 256.70906pt>
 File: p2_1.png Graphic file (type png)
 <use p2_1.png>
-Package pdftex.def Info: p2_1.png  used on input line 74.
-(pdftex.def)             Requested size: 449.05156pt x 128.7306pt.
-<n2_1.png, id=3, 802.49812pt x 275.52937pt>
-File: n2_1.png Graphic file (type png)
-<use n2_1.png>
-Package pdftex.def Info: n2_1.png  used on input line 76.
-(pdftex.def)             Requested size: 401.24808pt x 137.76434pt.
+Package pdftex.def Info: p2_1.png  used on input line 73.
+(pdftex.def)             Requested size: 543.5293pt x 128.3542pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--77
+Overfull \hbox (37.67897pt too wide) in paragraph at lines 69--74
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--74
 
  []
 
-<p2_2.png, id=4, 1102.87032pt x 261.97874pt>
+<p2_2.png, id=3, 1086.30844pt x 256.70906pt>
 File: p2_2.png Graphic file (type png)
 <use p2_2.png>
-Package pdftex.def Info: p2_2.png  used on input line 82.
-(pdftex.def)             Requested size: 551.4338pt x 130.98904pt.
-<n2_2.png, id=5, 1314.41063pt x 448.67625pt>
-File: n2_2.png Graphic file (type png)
-<use n2_2.png>
-Package pdftex.def Info: n2_2.png  used on input line 84.
-(pdftex.def)             Requested size: 525.75494pt x 179.46732pt.
+Package pdftex.def Info: p2_2.png  used on input line 79.
+(pdftex.def)             Requested size: 543.1529pt x 128.3542pt.
 
-Overfull \hbox (45.58348pt too wide) in paragraph at lines 78--85
+Overfull \hbox (37.30257pt too wide) in paragraph at lines 75--80
 [] 
  []
 
 
-Overfull \hbox (19.90462pt too wide) in paragraph at lines 78--85
+Underfull \hbox (badness 10000) in paragraph at lines 75--80
+
+ []
+
+<p2_3.png, id=4, 1089.31969pt x 254.45062pt>
+File: p2_3.png Graphic file (type png)
+<use p2_3.png>
+Package pdftex.def Info: p2_3.png  used on input line 85.
+(pdftex.def)             Requested size: 544.65851pt x 127.22499pt.
+
+Overfull \hbox (38.80818pt too wide) in paragraph at lines 81--86
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--85
+Underfull \hbox (badness 10000) in paragraph at lines 81--86
 
  []
 
 [1
 
-{C:/Users/Richard Adhika/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./p2_1.png> <./n2_1.png>]
-<p2_3.png, id=17, 1081.03876pt x 247.67531pt>
-File: p2_3.png Graphic file (type png)
-<use p2_3.png>
-Package pdftex.def Info: p2_3.png  used on input line 90.
-(pdftex.def)             Requested size: 540.51805pt x 123.83734pt.
-<n2_3.png, id=18, 807.015pt x 355.3275pt>
-File: n2_3.png Graphic file (type png)
-<use n2_3.png>
-Package pdftex.def Info: n2_3.png  used on input line 92.
-(pdftex.def)             Requested size: 403.50652pt x 177.6633pt.
-
-Overfull \hbox (34.66772pt too wide) in paragraph at lines 86--93
-[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 86--93
-
- []
-
-[2 <./p2_2.png> <./n2_2.png> <./p2_3.png>]
-<p3_1.png, id=25, 1059.20718pt x 250.68657pt>
+{C:/Users/Richard Adhika/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./p2_1.png> <./p2_2.png>]
+<p3_1.png, id=16, 1095.3422pt x 253.69781pt>
 File: p3_1.png Graphic file (type png)
 <use p3_1.png>
-Package pdftex.def Info: p3_1.png  used on input line 98.
-(pdftex.def)             Requested size: 529.6023pt x 125.34297pt.
-<n3_1.png, id=26, 788.9475pt x 230.36063pt>
-File: n3_1.png Graphic file (type png)
-<use n3_1.png>
-Package pdftex.def Info: n3_1.png  used on input line 100.
-(pdftex.def)             Requested size: 394.47278pt x 115.18002pt.
+Package pdftex.def Info: p3_1.png  used on input line 91.
+(pdftex.def)             Requested size: 547.66975pt x 126.84859pt.
 
-Overfull \hbox (23.75197pt too wide) in paragraph at lines 94--101
+Overfull \hbox (41.81943pt too wide) in paragraph at lines 87--92
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--101
+Underfull \hbox (badness 10000) in paragraph at lines 87--92
 
  []
 
-<p3_2.png, id=27, 1081.79156pt x 249.93375pt>
-File: p3_2.png Graphic file (type png)
-<use p3_2.png>
-Package pdftex.def Info: p3_2.png  used on input line 106.
-(pdftex.def)             Requested size: 540.89447pt x 124.96657pt.
-<n3_2.png, id=28, 825.83531pt x 263.48438pt>
-File: n3_2.png Graphic file (type png)
-<use n3_2.png>
-Package pdftex.def Info: n3_2.png  used on input line 108.
-(pdftex.def)             Requested size: 412.91664pt x 131.74185pt.
 
-Overfull \hbox (35.04414pt too wide) in paragraph at lines 102--109
-[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 102--109
+Underfull \hbox (badness 10000) in paragraph at lines 93--97
 
  []
 
-[3 <./n2_3.png> <./p3_1.png> <./n3_1.png>]
-<p3_3.png, id=35, 1085.55562pt x 250.68657pt>
-File: p3_3.png Graphic file (type png)
-<use p3_3.png>
-Package pdftex.def Info: p3_3.png  used on input line 114.
-(pdftex.def)             Requested size: 542.77647pt x 125.34297pt.
-<n3_3.png, id=36, 823.57687pt x 250.68657pt>
-File: n3_3.png Graphic file (type png)
-<use n3_3.png>
-Package pdftex.def Info: n3_3.png  used on input line 116.
-(pdftex.def)             Requested size: 411.78743pt x 125.34297pt.
 
-Overfull \hbox (36.92615pt too wide) in paragraph at lines 110--117
-[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 110--117
+Underfull \hbox (badness 10000) in paragraph at lines 98--102
 
  []
 
-<p3_4.png, id=37, 1172.88188pt x 254.45062pt>
-File: p3_4.png Graphic file (type png)
-<use p3_4.png>
-Package pdftex.def Info: p3_4.png  used on input line 122.
-(pdftex.def)             Requested size: 527.79196pt x 114.50171pt.
-<n3_4.png, id=38, 983.92593pt x 249.18094pt>
-File: n3_4.png Graphic file (type png)
-<use n3_4.png>
-Package pdftex.def Info: n3_4.png  used on input line 124.
-(pdftex.def)             Requested size: 491.96176pt x 124.59015pt.
 
-Overfull \hbox (21.94164pt too wide) in paragraph at lines 118--125
-[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--125
+Underfull \hbox (badness 10000) in paragraph at lines 103--107
 
  []
 
-[4 <./p3_2.png> <./n3_2.png> <./p3_3.png> <./n3_3.png>]
-<p3_5.png, id=46, 1085.55562pt x 264.99pt>
-File: p3_5.png Graphic file (type png)
-<use p3_5.png>
-Package pdftex.def Info: p3_5.png  used on input line 137.
-(pdftex.def)             Requested size: 542.77647pt x 132.49467pt.
-<n3_5.png, id=47, 816.80156pt x 247.67531pt>
-File: n3_5.png Graphic file (type png)
-<use n3_5.png>
-Package pdftex.def Info: n3_5.png  used on input line 139.
-(pdftex.def)             Requested size: 408.39978pt x 123.83734pt.
 
-Overfull \hbox (36.92615pt too wide) in paragraph at lines 133--140
-[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 133--140
+Underfull \hbox (badness 10000) in paragraph at lines 108--112
 
  []
 
-[5 <./p3_4.png> <./n3_4.png> <./p3_5.png>]
-<p3_6.png, id=54, 1071.25218pt x 255.95625pt>
-File: p3_6.png Graphic file (type png)
-<use p3_6.png>
-Package pdftex.def Info: p3_6.png  used on input line 145.
-(pdftex.def)             Requested size: 535.62479pt x 127.9778pt.
-<n3_6.png, id=55, 840.13875pt x 251.43938pt>
-File: n3_6.png Graphic file (type png)
-<use n3_6.png>
-Package pdftex.def Info: n3_6.png  used on input line 147.
-(pdftex.def)             Requested size: 420.06834pt x 125.71938pt.
 
-Overfull \hbox (29.77446pt too wide) in paragraph at lines 141--148
-[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 141--148
+Underfull \hbox (badness 10000) in paragraph at lines 113--117
 
  []
 
-<p3_7.png, id=56, 858.95906pt x 251.43938pt>
-File: p3_7.png Graphic file (type png)
-<use p3_7.png>
-Package pdftex.def Info: p3_7.png  used on input line 153.
-(pdftex.def)             Requested size: 429.47849pt x 125.71938pt.
-<n3_7.png, id=57, 810.02625pt x 250.68657pt>
-File: n3_7.png Graphic file (type png)
-<use n3_7.png>
-Package pdftex.def Info: n3_7.png  used on input line 155.
-(pdftex.def)             Requested size: 405.01213pt x 125.34297pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--156
+Underfull \hbox (badness 10000) in paragraph at lines 118--122
 
  []
 
-[6 <./n3_5.png> <./p3_6.png> <./n3_6.png>]
-<p5_1.png, id=65, 1389.69188pt x 471.26062pt>
-File: p5_1.png Graphic file (type png)
-<use p5_1.png>
-Package pdftex.def Info: p5_1.png  used on input line 161.
-(pdftex.def)             Requested size: 486.39944pt x 164.94368pt.
-<n5_1.png, id=66, 797.22844pt x 168.63pt>
-File: n5_1.png Graphic file (type png)
-<use n5_1.png>
-Package pdftex.def Info: n5_1.png  used on input line 163.
-(pdftex.def)             Requested size: 398.61325pt x 84.31479pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--164
-
- []
-
-<p5_2.png, id=67, 1467.23157pt x 363.60844pt>
-File: p5_2.png Graphic file (type png)
-<use p5_2.png>
-Package pdftex.def Info: p5_2.png  used on input line 169.
-(pdftex.def)             Requested size: 513.53874pt x 127.26485pt.
-<n5_2.png, id=68, 803.25093pt x 192.72pt>
-File: n5_2.png Graphic file (type png)
-<use n5_2.png>
-Package pdftex.def Info: n5_2.png  used on input line 171.
-(pdftex.def)             Requested size: 401.62448pt x 96.35976pt.
-
-Overfull \hbox (7.68842pt too wide) in paragraph at lines 165--172
-[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 165--172
-
- []
-
-[7 <./p3_7.png> <./n3_7.png> <./p5_1.png> <./n5_1.png>]
-<p5_3.png, id=77, 1358.07375pt x 255.20343pt>
-File: p5_3.png Graphic file (type png)
-<use p5_3.png>
-Package pdftex.def Info: p5_3.png  used on input line 177.
-(pdftex.def)             Requested size: 543.21988pt x 102.07956pt.
-<n5_3.png, id=78, 1142.01656pt x 197.23688pt>
-File: n5_3.png Graphic file (type png)
-<use n5_3.png>
-Package pdftex.def Info: n5_3.png  used on input line 179.
-(pdftex.def)             Requested size: 513.9027pt x 88.75575pt.
-
-Overfull \hbox (37.36955pt too wide) in paragraph at lines 173--180
-[] 
- []
-
-
-Overfull \hbox (8.05237pt too wide) in paragraph at lines 173--180
-[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--180
-
- []
-
-<p5_4(1).png, id=79, 1544.01843pt x 274.77657pt>
-File: p5_4(1).png Graphic file (type png)
-<use p5_4(1).png>
-Package pdftex.def Info: p5_4(1).png  used on input line 187.
-(pdftex.def)             Requested size: 540.41455pt x 96.17323pt.
-<p5_4(2).png, id=80, 1105.88156pt x 85.06781pt>
-File: p5_4(2).png Graphic file (type png)
-<use p5_4(2).png>
-Package pdftex.def Info: p5_4(2).png  used on input line 188.
-(pdftex.def)             Requested size: 552.93944pt x 42.5338pt.
-<n5_4.png, id=81, 815.29594pt x 206.27063pt>
-File: n5_4.png Graphic file (type png)
-<use n5_4.png>
-Package pdftex.def Info: n5_4.png  used on input line 190.
-(pdftex.def)             Requested size: 407.64697pt x 103.13506pt.
-
-Overfull \hbox (34.56422pt too wide) in paragraph at lines 183--191
-[] 
- []
-
-
-Overfull \hbox (47.08911pt too wide) in paragraph at lines 183--191
-[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 183--191
-
- []
-
-[8 <./p5_2.png> <./n5_2.png> <./p5_3.png> <./n5_3.png>]
-<p7_1(1).png, id=89, 1516.16437pt x 249.93375pt>
-File: p7_1(1).png Graphic file (type png)
-<use p7_1(1).png>
-Package pdftex.def Info: p7_1(1).png  used on input line 196.
-(pdftex.def)             Requested size: 530.66548pt x 87.47812pt.
-<p7_1(2).png, id=90, 1566.60281pt x 147.55125pt>
-File: p7_1(2).png Graphic file (type png)
-<use p7_1(2).png>
-Package pdftex.def Info: p7_1(2).png  used on input line 197.
-(pdftex.def)             Requested size: 548.3192pt x 51.64369pt.
-<n7_1.png, id=91, 812.28468pt x 170.88844pt>
-File: n7_1.png Graphic file (type png)
-<use n7_1.png>
-Package pdftex.def Info: n7_1.png  used on input line 199.
-(pdftex.def)             Requested size: 406.14134pt x 85.444pt.
-
-Overfull \hbox (24.81516pt too wide) in paragraph at lines 192--200
-[] 
- []
-
-
-Overfull \hbox (42.46887pt too wide) in paragraph at lines 192--200
-[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 192--200
-
- []
-
-[9 <./p5_4(1).png> <./p5_4(2).png> <./n5_4.png> <./p7_1(1).png> <./p7_1(2).png> <./n7_1.png>] (examples.aux) ) 
+[2 <./p2_3.png> <./p3_1.png>] [3] (examples.aux) ) 
 Here is how much of TeX's memory you used:
- 5203 strings out of 478338
- 80832 string characters out of 2832416
- 394789 words of memory out of 3000000
- 23549 multiletter control sequences out of 15000+600000
+ 5007 strings out of 478338
+ 78312 string characters out of 2832416
+ 396789 words of memory out of 3000000
+ 23381 multiletter control sequences out of 15000+600000
  474510 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,8n,62p,406b,208s stack positions out of 10000i,1000n,20000p,200000b,80000s
-<C:/Users/Richard Adhika/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Richard Adhika/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Richard Adhika/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Richard Adhika/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Richard Adhika/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Richard Adhika/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on examples.pdf (9 pages, 3133443 bytes).
+<C:/Users/Richard Adhika/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Richard Adhika/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Richard Adhika/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Richard Adhika/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Richard Adhika/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on examples.pdf (3 pages, 298790 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
+ 46 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 161 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
